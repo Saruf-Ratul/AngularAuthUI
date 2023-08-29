@@ -11,7 +11,6 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   fullName!: string;
   users!: User[];
   constructor(public userStore: UserStoreService, public auth: AuthService, private userService: UserService) { }
@@ -22,7 +21,7 @@ export class DashboardComponent implements OnInit {
       let value = this.auth.getFullNameFromToken();
       this.fullName = res || value;
     })
-    this.getUsers();
+    //this.getUsers();
   }
 
   logOut(){
@@ -33,13 +32,13 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  getUsers(){
-    this.userService.getAllUsers()
-    .subscribe({
-      next:(res=>{
-        this.users = res
-      })
-    })
-  }
+  // getUsers(){
+  //   this.userService.getAllUsers()
+  //   .subscribe({
+  //     next:(res=>{
+  //       this.users = res
+  //     })
+  //   })
+  // }
 
 }
