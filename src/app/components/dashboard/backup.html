@@ -2,16 +2,16 @@
     <img ngSrc="/src/assets/image/navanalogo.jpg" width="98" height="70" priority>
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">Hello {{fullName}}</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-<!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+  <span class="navbar-toggler-icon"></span>
+  <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
 </button>
     <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a style="background: rgb(226, 73, 73);
-      color: #fff;
-      border-radius: 4px;
-      margin: 10px;" class="nav-link px-3 cursor-pointer" (click)="logOut()">Sign out</a>
+        color: #fff;
+        border-radius: 4px;
+        margin: 10px;" class="nav-link px-3 cursor-pointer" (click)="logOut()">Sign out</a>
         </div>
     </div>
 </header>
@@ -50,11 +50,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers align-text-bottom" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>                            Integrations
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers align-text-bottom" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>                            Integrations
-                        </a>
-                    </li> -->
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
@@ -105,42 +100,37 @@
                         <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                     </div>
                     <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar align-text-bottom" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          This week
-        </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar align-text-bottom" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            This week
+          </button>
                 </div>
-            </div>
-            <div>
-                <button (click)="addForm()">
-                Add
-              </button>
             </div>
             <div class="row">
                 <app-chartbord></app-chartbord>
             </div>
             <!-- <h2>Employee List</h2><br>
-        <div class="table-responsive">
-            <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of users; let i= index">
-                        <td>{{i+1}}</td>
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
-                        <td>{{user.username}}</td>
-                        <td>{{user.email}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
+          <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Firstname</th>
+                          <th scope="col">Lastname</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Email</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let user of users; let i= index">
+                          <td>{{i+1}}</td>
+                          <td>{{user.firstName}}</td>
+                          <td>{{user.lastName}}</td>
+                          <td>{{user.username}}</td>
+                          <td>{{user.email}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div> -->
         </main>
     </div>
 </div>

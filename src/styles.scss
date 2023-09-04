@@ -2,3 +2,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('assets/css/custom.css');
+// // styles.scss
+// @import '~@riapacheco/yutes/main.scss'; // For stripping styles & antialiasing
+// @import '~@riapacheco/yutes/seasonal.scss'; // To access dark color palette
+// html,
+// body {
+//     font-size: 17px;
+//     background-color: $midnight-dark;
+//     background-image: linear-gradient(to bottom right, $midnight-dark, $midnight-medium);
+//     background-attachment: fixed; // The background is fixed relative to the viewport
+//     color: $steel-regular; // Change text color to an _almost_ white
+// }
+.star {
+    color: #ff0000;
+    /* padding-left: 5px; */
+}

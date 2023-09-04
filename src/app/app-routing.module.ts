@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { AddApoinmentComponent } from './components/all-from/add-apoinment/add-apoinment.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -12,9 +13,10 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'reset', component:ResetPasswordComponent},
   {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
-
-
+  {path:'apoinment', component:AddApoinmentComponent},
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

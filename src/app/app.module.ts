@@ -13,6 +13,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import {MatCardModule} from '@angular/material/card';
 import { ChartbordComponent } from './components/chart/chartbord/chartbord.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GoogleChartsModule } from 'angular-google-charts';
+import {MatIconModule} from '@angular/material/icon';
+import { AddApoinmentComponent } from './components/all-from/add-apoinment/add-apoinment.component';
+import { ViewApoinmentComponent } from './components/all-from/view-apoinment/view-apoinment.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {ConfirmDialogComponent} from './shared/components/confirmation-dialog.component';
+import { ErrorMessageDialogComponent } from './shared/components/error-message-dialog.component';
+import { MessageDialogComponent } from './shared/components/message-dialog.component';
+import { AsyncService } from './services/async.service';
+import { CommonService } from './services/common.service';
+// import { PluginManager } from '@ngxs/store/src/plugin-manager';
 
 @NgModule({
   declarations: [
@@ -21,7 +37,12 @@ import { ChartbordComponent } from './components/chart/chartbord/chartbord.compo
     SignupComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    ChartbordComponent
+    ChartbordComponent,
+    AddApoinmentComponent,
+    ViewApoinmentComponent,
+    ConfirmDialogComponent,
+    ErrorMessageDialogComponent,
+    MessageDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +53,22 @@ import { ChartbordComponent } from './components/chart/chartbord/chartbord.compo
     HttpClientModule,
     NgOptimizedImage,
     MatCardModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    GoogleChartsModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDialogModule,
+
 
   ],
-  providers: [{
+  providers: [
+    AsyncService,
+    CommonService,
+    // PluginManager,
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true

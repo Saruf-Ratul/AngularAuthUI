@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserStoreService } from 'src/app/services/user-store.service';
 import { forkJoin } from 'rxjs';
 import { User } from 'src/app/models/user.model';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,22 +14,27 @@ import { User } from 'src/app/models/user.model';
 export class DashboardComponent implements OnInit {
   fullName!: string;
   users!: User[];
-  constructor(public userStore: UserStoreService, public auth: AuthService, private userService: UserService) { }
+  constructor(
+    public userStore: UserStoreService,
+    public auth: AuthService,
+    private userService: UserService,
+    public router: Router
+    ) { }
 
   ngOnInit() {
     this.userStore.getFullName()
-    .subscribe(res=>{
-      let value = this.auth.getFullNameFromToken();
-      this.fullName = res || value;
-    })
+      .subscribe(res => {
+        let value = this.auth.getFullNameFromToken();
+        this.fullName = res || value;
+      })
     //this.getUsers();
   }
 
-  logOut(){
+  logOut() {
     this.auth.signOut();
   }
 
-  loadFullName(){
+  loadFullName() {
 
   }
 
@@ -40,5 +46,9 @@ export class DashboardComponent implements OnInit {
   //     })
   //   })
   // }
+
+  addForm() {
+    this.router.navigate(['apoinment']);
+  }
 
 }

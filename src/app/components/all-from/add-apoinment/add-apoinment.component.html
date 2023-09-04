@@ -1,0 +1,43 @@
+<main>
+    <div class="text bg-image ">
+        <h1> BOOK SERVICE </h1>
+        <a>Navana Limited</a>
+    </div>
+
+
+    <div class="grid-container inner">
+        <mat-card class="mat-card-gap">
+            <div class="form-progress-bar-wrapper my-4">
+                <div class="form-progress-bar" [class]="progress === 100 ? 'bg-success' : 'bg-primary'" [style.width.%]="progress">
+                </div>
+            </div>
+
+            <form [id]="formId" [formGroup]="form" (ngSubmit)="onSaveConfirmation()" autocomplete="off">
+                <div class="form-container" fxLayout="row wrap" fxLayoutGap="20px">
+                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
+                        <mat-label>Company Code <span class="star">*</span></mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="CompanyCode" />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
+                        <mat-label>Name</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="name" />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
+                        <mat-label>Description <span class="star">*</span></mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="description" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+                    </div>
+
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</main>
