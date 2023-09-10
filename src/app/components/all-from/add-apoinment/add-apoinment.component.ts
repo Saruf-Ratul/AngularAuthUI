@@ -45,10 +45,17 @@ export class AddApoinmentComponent implements OnInit {
 
   formInfo() {
     this.form = this.fb.group({
-      id: ['0'],
+      //id: ['0'],
       CompanyCode: ['200'],
-      name: [null, Validators.required],
+      CarName: [null, Validators.required],
       description: [null, Validators.required],
+      ModelYear: [null, Validators.required],
+      RuningMilage: [null, Validators.required],
+      Problem: [null, Validators.required],
+      Note: [null, Validators.required],
+      PhoneNumber: [null, Validators.required],
+      Email: [null, Validators.required],
+      Address: [null, Validators.required],
     });
 
     this.formObserver = this.form.valueChanges

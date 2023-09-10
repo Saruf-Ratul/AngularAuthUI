@@ -129,3 +129,690 @@ img {
 .toast-right-top {
     height: auto !important;
 }
+
+.star {
+    color: #ff0000;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/src/assets/fonts/Roboto-Regular.otf") format("opentype");
+}
+
+* {
+    font-family: Roboto;
+}
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/src/assets/icons/material_icons.woff2") format("woff2");
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*********************************************************************/
+
+
+/*
+html,
+body {
+    height: 100%;
+    background-color: #cad6e4;
+}
+
+.flexed {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.nav.card-header .mat-card-header-text {
+    margin: 0;
+}
+
+.snackbar-container {
+    background-color: #ffffff;
+    color: #212121;
+    word-break: break-word;
+    z-index: 999999;
+}
+
+.snackbar-container.success {
+    border: 3px solid #4CAF50;
+}
+
+.snackbar-container.danger {
+    border: 3px solid #EA4335;
+}
+
+.snackbar-container {
+    background-color: #ffffff;
+    color: #212121;
+    word-break: break-word;
+    z-index: 999999;
+    font-size: 1.5rem;
+}
+
+.snackbar-container.success {
+    background-color: #d4edda;
+    color: green;
+}
+
+.snackbar-container.danger {
+    background-color: #f7d7da;
+    border: 1px solid #fd9090;
+    color: rgb(255, 2, 2);
+}
+
+.service-confirmation-dialog-list {
+    margin-top: 5px;
+    list-style: square;
+    font-size: 13px;
+    margin-left: 25px;
+}
+
+.menu-list-item .mat-list-item-content {
+    flex: 1 1 100% !important;
+}
+
+.mat-elevation-z8 table {
+    width: 100%;
+}
+
+.update-record-btn {
+    cursor: pointer;
+    outline: none;
+}
+
+.delete-record-btn {
+    color: #ff0000;
+    cursor: pointer;
+    outline: none;
+}
+
+.cancel-btn {
+    color: #f75b34;
+    cursor: pointer;
+    outline: none;
+}
+
+.stroked-btn {
+    background-color: #e3eaf2;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.stroked-btn:hover {
+    color: #fff;
+    background-color: #274a97;
+}
+
+.dialog-headline {
+    margin-top: -24px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 25px;
+    padding-right: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    background: #274a97 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: white;
+    height: 50px;
+} */
+
+
+/**********************************************************/
+
+
+/* this section start for mat form field & label*/
+
+
+/************************************************/
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 3px 0px 10px 0px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #f3f6fa !important;
+    border-radius: 5px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ccdbec !important;
+    border-radius: 5px;
+}
+
+.mat-form-field-appearance-outline:hover .mat-form-field-outline-thick {
+    color: #f3f6fa !important;
+    border: 1px solid #87acf0 !important;
+    box-shadow: rgba(71, 106, 221, 0.12) 0px 3px 5px 0px, rgba(71, 106, 221, 0.32) 0px 3px 10px 0px;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: #c70000 !important;
+    opacity: 0.7 !important;
+}
+
+.form-field-label {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* this section end for mat form field & label */
+
+
+/************************************************/
+
+.btn-blue {
+    background-color: #274a97;
+    color: #fff;
+    min-width: 100px !important;
+}
+
+.btn-light-blue {
+    background-color: #01ade4;
+    color: #fff;
+    min-width: 100px !important;
+}
+
+.btn-red {
+    background-color: #ff0000;
+    color: #fff;
+    min-width: 100px !important;
+}
+
+.btn-green {
+    background-color: #007e06;
+    color: #fff;
+    min-width: 100px !important;
+}
+
+.btn-100px {
+    min-width: 100px !important;
+}
+
+
+/************************************************/
+
+
+/* this section start for report table */
+
+.report-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.report-table th {
+    background: #274a97;
+    opacity: 1;
+    color: #fff;
+    font-weight: normal;
+    padding: 5px;
+    text-align: center !important;
+    border: 1px solid #cad6e4;
+}
+
+.report-table td {
+    padding: 5px !important;
+    text-align: left;
+    border: 1px solid #cad6e4;
+}
+
+.report-table tr:nth-child(even) {
+    background: #e3eaf2;
+}
+
+.report-table .mat-sort-header-arrow {
+    color: #fff;
+}
+
+
+/* this section end for report table */
+
+
+/************************************************/
+
+
+/************* Angular Mat Data Table Start *************/
+
+.mat-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/*Header height*/
+
+.mat-data-table tr.mat-header-row {
+    height: 40px !important;
+}
+
+
+/*Header backGroud color - Font color -border - padding */
+
+.mat-data-table th.mat-header-cell {
+    background-color: #274a97;
+    color: white;
+    border: 1px solid hsl(212, 33%, 84%) !important;
+    padding: 0 5px;
+}
+
+
+/*data row align - height*/
+
+.mat-data-table tr.mat-row {
+    /* text-align: center; */
+    height: 35px !important;
+}
+
+
+/*data row border - padding*/
+
+.mat-data-table td.mat-cell {
+    border: 1px solid #cad6e4 !important;
+    padding: 2px 5px;
+}
+
+.mat-data-table tr:nth-child(even) {
+    background: #eff2f7;
+}
+
+.mat-data-table .mat-sort-header-arrow {
+    color: #fff;
+}
+
+.mat-table-action {
+    width: 60px;
+}
+
+
+/************ Angular Mat Data Table End *************/
+
+
+/************* View Mat Data Table Start *************/
+
+.mat-data-table-view {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/*Header height*/
+
+.mat-data-table-view tr.mat-header-row {
+    height: 40px !important;
+}
+
+
+/*Header backGroud color - Font color -border - padding */
+
+.mat-data-table-view th.mat-header-cell {
+    background-color: #666666;
+    color: white;
+    border: 1px solid #dfdfdf !important;
+    padding: 0 5px;
+}
+
+
+/*data row align - height*/
+
+.mat-data-table-view tr.mat-row {
+    /* text-align: center; */
+    height: 35px !important;
+}
+
+
+/*data row border - padding*/
+
+.mat-data-table-view td.mat-cell {
+    border: 1px solid #dfdfdf !important;
+    padding: 2px 5px;
+}
+
+.mat-data-table-view tr:nth-child(even) {
+    background: #eeeeee;
+}
+
+.mat-data-table-view .mat-sort-header-arrow {
+    color: #fff;
+}
+
+.mat-table-action-view {
+    width: 55px;
+}
+
+
+/************ View Data Table End *************/
+
+
+/**********************************************/
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+/* .form-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+}
+
+.right {
+    margin: 5px 5px 0 0;
+}
+
+.invalid {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.contact {
+    height: 50vh;
+    background: #fff;
+    padding: 22px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color: #222;
+    border-radius: 4px;
+}
+
+.form-control {
+    margin: 0 2px 4px 2px;
+    max-width: 100%;
+}
+
+section {
+    display: table;
+}
+
+.label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+.button-row {
+    display: table-cell;
+    width: 490px;
+}
+
+.button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+table-test {
+    text-align: left;
+}
+
+.mat-tooltip.tooltip {
+    font-size: 12px;
+}
+
+.mat-card-gap {
+    margin-top: 10px;
+}
+
+.hr-decorate {
+    width: 100%;
+    border: 1px solid #cad6e4;
+    margin-bottom: 10px;
+}
+
+.hr-title-decorate {
+    font-weight: bold;
+}
+
+.report-angular {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.report-angular th {
+    background: #274a97;
+    text-align: center !important;
+    opacity: 1;
+    font-size: 15px;
+    color: #fff;
+    font-weight: normal;
+    padding-top: -5px;
+    padding-bottom: -5px;
+    border: 1px solid #cad6e4;
+}
+
+.report-angular td {
+    padding: 10px !important;
+    text-align: left;
+    border: 1px solid #cad6e4;
+}
+
+.report-angular tr:nth-child(even) {
+    background: #e3eaf2;
+}
+
+.report-angular .mat-sort-header-arrow {
+    color: #fff;
+}
+
+.employee-list-span {
+    font-size: 0.8rem;
+}
+
+.color-active {
+    color: #00af00;
+}
+
+.color-inactive {
+    color: #ff0000;
+}
+
+.color-red {
+    color: #FF0000;
+}
+
+.star {
+    color: #ff0000;
+}
+
+.sub-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: #017bdf;
+    padding-bottom: 16px;
+}
+
+.cancel-button {
+    background-color: #e2a202;
+}
+
+.t-center {
+    text-align: center !important;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.t-right {
+    text-align: right;
+} */
+
+
+/************************************************/
+
+
+/* Select list hover color setup */
+
+
+/* .mat-option:hover:not(.mat-option-disabled) {
+    background: #d2daec !important;
+}
+
+.mat-option.mat-active:not(.mat-option-disabled) {
+    background: #d2daec !important;
+}
+
+mat-datepicker-toggle {
+    position: relative;
+    bottom: -2px;
+    right: -8px;
+}
+
+.white-text {
+    color: #fff !important;
+}
+
+.branch-list-span {
+    font-size: 0.8rem;
+}
+
+.text-green {
+    color: green !important;
+}
+
+.text-red {
+    color: #ff0000 !important;
+}
+
+.bg-lgreen {
+    background-color: #d4edda !important;
+}
+
+.bg-lred {
+    background-color: #ffeded !important;
+}
+
+.cursor {
+    cursor: pointer !important;
+} */
+
+
+/************************************************/

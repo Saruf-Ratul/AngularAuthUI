@@ -14,7 +14,7 @@ export class ApoinmentService {
   ) { }
 
   public addData(formData: any ) {
-    return this.http.post(`https://localhost:7066/api/Dashboard/add`, formData);
+    return this.http.post(`https://localhost:7066/api/Apoinment/add`, formData);
   }
 
 }
