@@ -13,8 +13,14 @@ export class ApoinmentService {
     private router: Router
   ) { }
 
+  //tbAppointment
   public addData(formData: any ) {
     return this.http.post(`https://localhost:7066/api/Apoinment/add`, formData);
+  }
+
+  //tbAppType
+  public GetAlltbAppType() {
+    return this.http.get(`https://localhost:7066/api/tbAppointment/view_tbAppType`);
   }
 
 }

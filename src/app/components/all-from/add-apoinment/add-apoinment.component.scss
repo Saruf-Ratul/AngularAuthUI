@@ -1,37 +1,49 @@
-.mat-card-gap {
-    padding: 20px;
-    /* Add padding as needed */
-}
-
-.form-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-}
-
-.form-field {
-    flex: 1;
-    max-width: calc(33.33% - 20px);
-    display: flex;
-    flex-direction: column;
-}
-
-p {
-    font-family: Lato;
-}
-
-.form-progress-bar {
-    border-radius: inherit;
-    height: 100%;
-    transition: width .6s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-.form-progress-bar-wrapper {
-    background-color: #e8ebee;
-    border-radius: 6px;
-    height: 1rem;
-    width: 100%;
+// .mat-card-gap {
+//     padding: 20px;
+//     /* Add padding as needed */
+// }
+// .form-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: flex-start;
+//     gap: 20px;
+// }
+// .form-field {
+//     flex: 1;
+//     max-width: calc(33.33% - 20px);
+//     display: flex;
+//     flex-direction: column;
+// }
+// p {
+//     font-family: Lato;
+// }
+// .form-progress-bar {
+//     border-radius: inherit;
+//     height: 100%;
+//     transition: width .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+// }
+// .form-progress-bar-wrapper {
+//     background-color: #e8ebee;
+//     border-radius: 6px;
+//     height: 1rem;
+//     width: 100%;
+// }
+// .text {
+//     color: rgb(0, 0, 0);
+//     padding: auto;
+//     font-family: Lato;
+//     text-align: center;
+// }
+// .bg-image {
+//     background-image: url('/src/assets/image/Technician-1.jpg');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
+// .form-Size {
+//     height: 48px !important;
+// }
+.center {
+    border: 1px solid black;
 }
 
 .text {
@@ -41,12 +53,21 @@ p {
     text-align: center;
 }
 
-.bg-image {
-    background-image: url('/src/assets/image/Technician-1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+nz-select {
+    width: 200px;
 }
 
-.form-Size {
-    height: 35px !important;
+nz-date-picker {
+    margin: 0 8px 12px 0;
+    width: 200px;
+}
+
+nz-time-picker {
+    margin: 0 8px 12px 0;
+    width: 200px;
+}
+
+input {
+    margin: 0 8px 12px 0;
+    width: 200px;
 }

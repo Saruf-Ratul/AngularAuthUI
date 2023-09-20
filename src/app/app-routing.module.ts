@@ -14,6 +14,12 @@ const routes: Routes = [
   {path:'reset', component:ResetPasswordComponent},
   {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
   {path:'apoinment', component:AddApoinmentComponent},
+
+  // { path: 'arrear-module',
+  // loadChildren: () => import('./components/all-from/apoinment.module').then(m => m.ApoinmentModule),
+  // canActivate: [AuthGuard]
+  // },
+
 ];
 
 

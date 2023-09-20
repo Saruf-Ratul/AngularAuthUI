@@ -29,6 +29,46 @@ import { MessageDialogComponent } from './shared/components/message-dialog.compo
 import { AsyncService } from './services/async.service';
 import { CommonService } from './services/common.service';
 // import { PluginManager } from '@ngxs/store/src/plugin-manager';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from 'src/environments/environment';
+import { AsyncState } from './shared/state/async.state';
+import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import { IconDefinition } from '@ant-design/icons-angular';
+import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
+
+
+
+
+registerLocaleData(en);
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 @NgModule({
   declarations: [
@@ -43,8 +83,14 @@ import { CommonService } from './services/common.service';
     ConfirmDialogComponent,
     ErrorMessageDialogComponent,
     MessageDialogComponent,
+
   ],
   imports: [
+    BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
+    NgxsModule.forRoot([AsyncState], {  //AuthState,
+      developmentMode: !environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot({ disabled: environment.production }),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -61,6 +107,27 @@ import { CommonService } from './services/common.service';
     MatSelectModule,
     MatButtonModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMomentDateModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    NzButtonModule,
+    NzGridModule,
+    NzIconModule,
+    NzTypographyModule,
+    NzDividerModule,
+    NzLayoutModule,
+    NzSpaceModule,
+    NzCardModule,
+    NzSelectModule,
+    NzEmptyModule,
+    NzSkeletonModule,
+    NzDatePickerModule,
+    NzImageModule,
+    NzInputModule,
+    NzFormModule,
+    NzTimePickerModule
 
 
   ],
@@ -72,7 +139,10 @@ import { CommonService } from './services/common.service';
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
-   },],
+   },
+   { provide: NZ_I18N, useValue: en_US },
+   { provide: NZ_ICONS, useValue: icons }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
