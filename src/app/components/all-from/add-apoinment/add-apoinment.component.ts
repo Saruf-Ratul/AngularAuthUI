@@ -175,6 +175,10 @@ export class AddApoinmentComponent implements OnInit {
     return controlCount === 0 ? 100 : (validCount / controlCount) * 100;
   }
 
+  onBack(){
+    this.router.navigate(['dashboard']);
+  }
+
   ngOnDestroy() {
     this.formObserver.unsubscribe();
   }

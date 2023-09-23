@@ -23,7 +23,8 @@
                     <nz-form-item>
                         <nz-form-label for="tbAppType">Work Type Selection <span class="star">*</span></nz-form-label>
                         <nz-select class="center" nz-input id="tbAppType" formControlName="tbAppType" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
-                            <nz-option *ngFor="let tbAT of tbAppType" [nzLabel]="tbAT.app_Type" [nzValue]="tbAT.app_TypeId"></nz-option>
+                            <nz-option *ngFor="let tbAT of tbAppType" [nzLabel]="tbAT.app_Type" [nzValue]="tbAT.app_TypeId">
+                            </nz-option>
                         </nz-select>
                     </nz-form-item>
 
@@ -142,8 +143,13 @@
                     </nz-form-item>
                 </div>
             </div>
-            <div>
-                <button nz-button nzType="primary" type="submit" [disabled]="!form.valid">Save</button>
+            <div nz-row [nzGutter]="16">
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="12">
+                    <button nz-button nzType="primary" type="submit" [disabled]="!form.valid">Save</button>
+                </div>
+                <div nz-col nzSpan="24 " nzXs="24 " nzMd="8 " nzLg="12">
+                    <button nz-button nzType="primary" type="button " (click)="onBack()">Back</button>
+                </div>
             </div>
         </form>
     </nz-card>

@@ -61,6 +61,12 @@ import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+
 
 
 
@@ -128,7 +134,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzInputModule,
     NzFormModule,
     NzTimePickerModule,
-    NzProgressModule
+    NzProgressModule,
+    NzBreadCrumbModule,
+    ScrollingModule,
+    DragDropModule,
+    NzMenuModule,
+    NzDropDownModule,
+
 
 
   ],

@@ -51,4 +51,9 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['apoinment']);
   }
 
+  //Appointment
+  appointment() {
+    this.router.navigate(['apoinment']);
+  }
+
 }
