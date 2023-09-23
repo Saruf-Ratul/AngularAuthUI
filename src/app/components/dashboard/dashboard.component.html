@@ -38,7 +38,6 @@
             </li>
         </ul>
     </nz-sider>
-
     <nz-layout>
         <nz-header style="height: inherit; background-color: #001529; padding: 6px;">
             <div nz-row [nzGutter]="16">
@@ -61,6 +60,39 @@
                 <app-chartbord></app-chartbord>
             </div>
         </nz-content>
-        <nz-footer style="padding-top: 25px;">Navana Limited ©2023 Implement By Navana Group IT</nz-footer>
+        <nz-content>
+            <div class="inner-content">
+                <h2>Appointment List</h2><br>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">Model Year</th>
+                                <th scope="col">Kilometer</th>
+                                <th scope="col">Remarks</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let appointment of appointmentData; let i= index">
+                                <td>{{i+1}}</td>
+                                <td>{{appointment.model}}</td>
+                                <td>{{appointment.model_Year}}</td>
+                                <td>{{appointment.km}}</td>
+                                <td>{{appointment.remarks}}</td>
+                                <td>{{appointment.address}}</td>
+                                <td>{{appointment.vPhone}}</td>
+                                <td>{{appointment.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </nz-content>
+        <nz-footer>Navana Limited ©2023 Implement By Navana Group IT</nz-footer>
     </nz-layout>
 </nz-layout>

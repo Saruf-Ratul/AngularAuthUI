@@ -15,8 +15,11 @@ export class ApoinmentService {
 
   //tbAppointment
   public addData(formData: any ) {
-    console.log('################',formData);
     return this.http.post(`https://localhost:7066/api/tbAppointment/add`, formData);
+  }
+
+  getAllData(){
+    return this.http.get<any>(`https://localhost:7066/api/tbAppointment/view`);
   }
 
   //tbAppType

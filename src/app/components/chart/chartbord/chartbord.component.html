@@ -4,36 +4,31 @@
             <google-chart [title]="chart.title" [type]="chart.type" [data]="chart.data" [columns]="chart.columnNames" [options]="chart.options">
             </google-chart>
         </div>
-        <!-- <div fxLayout="column" fxFlex="0 1 calc(33.33% - 10px)">
-            <google-chart [title]="chart.title" [type]="chart.type" [data]="chart.data" [columns]="chart.columnNames" [options]="chart.options">
-            </google-chart>
-        </div> -->
     </div>
 </mat-card>
+
+<br>
 
 <div class="mat-card-gap">
     <div style="display: flex; flex-direction: row; gap: 8px;">
 
         <mat-card style="flex: 1; display: flex; justify-content: space-around; align-items: center; background-color: lavender;">
-            <span class="heading-font">Total Sell</span>
-            <span class="heading-data-font">1,050</span>
+            <span class="heading-font">Total Appointment </span>
+            <span class="heading-data-font">{{appointmentDataCount}}</span>
         </mat-card>
 
         <mat-card style="flex: 1; display: flex; justify-content: space-around; align-items: center; background-color: lightblue;">
-            <span class="heading-font">New Item</span>
-            <span class="heading-data-font">10</span>
+            <span class="heading-font">New Appointment</span>
+            <span class="heading-data-font">{{appointmentConfData}}</span>
         </mat-card>
 
         <mat-card style="flex: 1; display: flex; justify-content: space-around; align-items: center; background-color: linen;">
-            <span class="heading-font">Today's Sell</span>
-            <span class="heading-data-font">1,025</span>
+            <span class="heading-font">Confirm Appointment</span>
+            <span class="heading-data-font">{{appointmentNeedConfData}}</span>
         </mat-card>
 
         <mat-card style="flex: 1; display: flex; justify-content: space-around; align-items: center; background-color: gainsboro;">
-            <span class="heading-font">Need Product</span>
-            <span class="heading-data-font">25</span>
+            <span class="heading-font">Done</span>
+            <span class="heading-data-font">{{doneData}}</span>
         </mat-card>
-
     </div>
-
-</div>

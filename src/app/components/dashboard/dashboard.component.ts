@@ -5,6 +5,7 @@ import { UserStoreService } from 'src/app/services/user-store.service';
 import { forkJoin } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { ActivatedRoute, Router } from "@angular/router";
+import { ApoinmentService } from '../all-from/apoinment.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,11 +15,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class DashboardComponent implements OnInit {
   fullName!: string;
   users!: User[];
+  appointmentData : any = [];
+
   constructor(
     public userStore: UserStoreService,
     public auth: AuthService,
     private userService: UserService,
-    public router: Router
+    public router: Router,
+    public   apoinmentService: ApoinmentService,
     ) { }
 
   ngOnInit() {
@@ -27,12 +31,13 @@ export class DashboardComponent implements OnInit {
         let value = this.auth.getFullNameFromToken();
         this.fullName = res || value;
       })
-    //this.getUsers();
+    // this.getUsers();
+    this.getAllData();
   }
 
   logOut() {
     this.auth.signOut();
-  }
+  };
 
   loadFullName() {
 
@@ -42,18 +47,29 @@ export class DashboardComponent implements OnInit {
   //   this.userService.getAllUsers()
   //   .subscribe({
   //     next:(res=>{
+  //       console.log(res);
   //       this.users = res
+  //       console.log(this.users);
   //     })
   //   })
   // }
 
+  getAllData(){
+    this.apoinmentService.getAllData()
+    .subscribe({
+      next:(res=>{
+        this.appointmentData = res.data
+      })
+    })
+  };
+
   addForm() {
     this.router.navigate(['apoinment']);
-  }
+  };
 
   //Appointment
   appointment() {
     this.router.navigate(['apoinment']);
-  }
+  };
 
 }
