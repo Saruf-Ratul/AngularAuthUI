@@ -1,67 +1,3 @@
-<!-- <main>
-    <div class="text bg-image ">
-        <h1> BOOK SERVICE </h1>
-        <a>Navana Limited</a>
-    </div>
-
-    <div class="grid-container inner">
-        <mat-card class="mat-card-gap">
-            <div class="form-progress-bar-wrapper my-4">
-                <div class="form-progress-bar" [class]="progress === 100 ? 'bg-success' : 'bg-primary'" [style.width.%]="progress">
-                </div>
-            </div>
-            <form [id]="formId" [formGroup]="form" (ngSubmit)="onSaveConfirmation()" autocomplete="off">
-                <div class="form-container" fxLayout="row wrap" fxLayoutGap="20px">
-                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
-                        <mat-label>Appointment Type</mat-label>
-                        <mat-form-field appearance="outline">
-                            <mat-select class="form-Size" formControlName="tbAppType">
-                                <mat-option value="1">Diagnosis</mat-option>
-                                <mat-option value="2">Washing/Periodic Maintenance</mat-option>
-                                <mat-option value="3">General Repair</mat-option>
-                                <mat-option value="4">PM</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
-                        <mat-label>Schedule Date <span class="star">*</span></mat-label>
-                        <mat-form-field appearance="outline">
-                            <input matInput [matDatepicker]="schDate" formControlName="Schedule_Date">
-                            <mat-datepicker-toggle matSuffix [for]="schDate"></mat-datepicker-toggle>
-                            <mat-datepicker #schDate></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
-                        <mat-label>Schedule Time <span class="star">*</span></mat-label>
-                        <mat-form-field appearance="outline">
-                            <input matInput [matDatepicker]="schTime" formControlName="Schedule_Time">
-                            <mat-datepicker-toggle matSuffix [for]="schTime"></mat-datepicker-toggle>
-                            <mat-datepicker #schTime></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                    <div class="form-field" fxLayout="column" fxFlex="0 1 calc(33.33% - 20px)">
-                        <mat-label>End Time <span class="star">*</span></mat-label>
-                        <mat-form-field appearance="outline">
-                            <input matInput [matDatepicker]="endTime" formControlName="End_Time">
-                            <mat-datepicker-toggle matSuffix [for]="endTime"></mat-datepicker-toggle>
-                            <mat-datepicker #endTime></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div>
-                    <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
-                </div>
-            </form>
-        </mat-card>
-    </div>
-</main> -->
-
-
-
-
-
-<!-- Path: src/app/components/all-from/add-apoinment/add-apoinment.component.html -->
-
 <div nz-row>
     <div nz-col nzSpan="24">
         <div class="text">
@@ -76,8 +12,7 @@
         <div nz-row>
             <div nz-col nzSpan="24">
                 <div class="form-progress-bar-wrapper my-4">
-                    <div class="form-progress-bar" [class]="progress === 100 ? 'bg-success' : 'bg-primary'" [style.width.%]="progress">
-                    </div>
+                    <nz-progress [nzPercent]="progress" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }"></nz-progress>
                 </div>
             </div>
         </div>
@@ -88,12 +23,10 @@
                     <nz-form-item>
                         <nz-form-label for="tbAppType">Work Type Selection <span class="star">*</span></nz-form-label>
                         <nz-select class="center" nz-input id="tbAppType" formControlName="tbAppType" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
-                            <nz-option nzLabel="Diagnosis" nzValue="1"></nz-option>
-                            <nz-option nzLabel="Washing/Periodic Maintenance" nzValue="2"></nz-option>
-                            <nz-option nzLabel="General Repair" nzValue="3"></nz-option>
-                            <nz-option nzLabel="PM" nzValue="4"></nz-option>
+                            <nz-option *ngFor="let tbAT of tbAppType" [nzLabel]="tbAT.app_Type" [nzValue]="tbAT.app_TypeId"></nz-option>
                         </nz-select>
                     </nz-form-item>
+
                 </div>
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
                     <nz-form-item>
@@ -125,32 +58,92 @@
                 </div>
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
                     <nz-form-item>
+                        <nz-form-label for="Address">Address<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Address" formControlName="Address" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            </div>
+            <div nz-row [nzGutter]="16">
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
                         <nz-form-label for="vReg_No">Vehicle Reg. Name <span class="star">*</span></nz-form-label>
                         <nz-form-control>
                             <input class="center" nz-input id="vReg_No" formControlName="vReg_No" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Model">Model Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Model" formControlName="Model" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Model_Year">Model Year <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Model_Year" formControlName="Model_Year" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="KM">Runing KM <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="KM" formControlName="KM" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Chesis_No">Chesis No.<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Chesis_No" formControlName="Chesis_No" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="MobleNO_SMS">Moble NO For SMS<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="MobleNO_SMS" formControlName="MobleNO_SMS" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
             </div>
             <div nz-row [nzGutter]="16">
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->1
+                    <nz-form-item>
+                        <nz-form-label for="Remarks">Remarks<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Remarks" formControlName="Remarks" />
+                        </nz-form-control>
+                    </nz-form-item>
                 </div>
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->2
+                    <nz-form-item>
+                        <nz-form-label for="email">Email<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="email" formControlName="email" />
+                        </nz-form-control>
+                    </nz-form-item>
                 </div>
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->3
+                    <nz-form-item>
+                        <nz-form-label for="vPhone">Phone<span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="vPhone" formControlName="vPhone" />
+                        </nz-form-control>
+                    </nz-form-item>
                 </div>
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->4
-                </div>
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->5
-                </div>
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <!-- Your content here -->6
-                </div>
+            </div>
+            <div>
+                <button nz-button nzType="primary" type="submit" [disabled]="!form.valid">Save</button>
             </div>
         </form>
     </nz-card>

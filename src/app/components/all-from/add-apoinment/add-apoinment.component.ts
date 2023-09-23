@@ -9,8 +9,9 @@ import { NgToastService } from 'ng-angular-popup';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
-import { NzI18nService} from 'ng-zorro-antd/i18n';
+import { NzI18nService } from 'ng-zorro-antd/i18n';
 import { FormControl, NonNullableFormBuilder } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-add-apoinment',
@@ -31,6 +32,7 @@ export class AddApoinmentComponent implements OnInit {
   selectedValue = null;
   date = null;
   isEnglish = true;
+  systemDate = moment().format('YYYY-MM-DD');
 
 
   public progress: number;
@@ -59,12 +61,14 @@ export class AddApoinmentComponent implements OnInit {
 
   formInfo() {
     this.form = this.fb.group({
-      //id: ['0'],
+      id: ['0'],
+      CompanyCode: ['200'],
       tbAppType: [null],
       Schedule_Date: [null],
       Schedule_Time: [null],
       End_Time: [null],
       Cust_Name: [null],
+      Address: [null],
       vReg_No: [null],
       Model: [null],
       Model_Year: [null],
@@ -72,7 +76,7 @@ export class AddApoinmentComponent implements OnInit {
       Reminder1_Date: [null],
       Reminder2_Date: [null],
       Reminder3_Date: [null],
-      CustomerRequest: [null],
+      CustomerRequest: ['null'],
       App_TypeId: [null],
       App_Serial: [null],
       APP_Confirm: [null],
@@ -89,10 +93,10 @@ export class AddApoinmentComponent implements OnInit {
       MobleNO_SMS: [null],
       APP_Re_Confirm: [null],
       Chesis_No: [null],
-      UserName: [null],
-      Computer_Name: [null],
-      Computer_UserName: [null],
-      SysDate: [null]
+      UserName: ['null'],
+      Computer_Name: ['null'],
+      Computer_UserName: ['null'],
+      SysDate: this.systemDate,
     });
 
     this.formObserver = this.form.valueChanges
@@ -100,9 +104,6 @@ export class AddApoinmentComponent implements OnInit {
       .subscribe(() => this.onFormChanged(this.form));
   }
 
-  //TODO
-
-  //TODO
 
   get f() {
     return this.form.controls;
@@ -159,46 +160,20 @@ export class AddApoinmentComponent implements OnInit {
     }
   };
 
-  // onSaveConfirmation = (): void => {
-  //   if (this.form.valid) {
-  //     this.commonService.showDialog(
-  //       {
-  //         title: this.paramId
-  //           ? 'Confirmation - Update Record'
-  //           : 'Confirmation - Save Record',
-  //         content: this.paramId
-  //           ? 'Are you sure to update record?'
-  //           : 'Are you sure to save record?',
-  //       },
-  //       () => {
-  //         if (this.paramId) {
-  //           this.addData();
-  //         } else {
-  //           this.error();
-  //         }
-  //       }
-  //     );
-  //   } else {
-  //     this.commonService.showErrorMsg('Please fill the required fields!');
-  //   }
-  // };
-
-
-
   onFormChanged(form: FormGroup): void {
     this.progress = this.calculateFormProgress(form);
-    //console.log('###########', this.progress)
   }
 
   calculateFormProgress(form: FormGroup): number {
     const controlCount = Object.keys(form.controls).length;
     let validCount = 0;
     for (const [key, value] of Object.entries(form.controls)) {
-      if (value.valid) validCount++;
+      if ( value.value ) {
+        validCount++;
+      }
     }
-    return validCount / controlCount * 100;
+    return controlCount === 0 ? 100 : (validCount / controlCount) * 100;
   }
-
 
   ngOnDestroy() {
     this.formObserver.unsubscribe();

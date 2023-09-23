@@ -60,7 +60,7 @@ import en from '@angular/common/locales/en';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
-
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 
 
 
@@ -127,7 +127,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzImageModule,
     NzInputModule,
     NzFormModule,
-    NzTimePickerModule
+    NzTimePickerModule,
+    NzProgressModule
 
 
   ],
