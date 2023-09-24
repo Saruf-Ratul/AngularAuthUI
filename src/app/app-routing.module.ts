@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AddApoinmentComponent } from './components/all-from/add-apoinment/add-apoinment.component';
+import { ConfirmApoinmentComponent } from './components/all-from/confirm-apoinment/confirm-apoinment.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'reset', component:ResetPasswordComponent},
   {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
   {path:'apoinment', component:AddApoinmentComponent},
+  {path:'confirmApoinment', component:ConfirmApoinmentComponent},
 
   // { path: 'arrear-module',
   // loadChildren: () => import('./components/all-from/apoinment.module').then(m => m.ApoinmentModule),

@@ -66,6 +66,12 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ConfirmApoinmentComponent } from './components/all-from/confirm-apoinment/confirm-apoinment.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NzTableModule } from 'ng-zorro-antd/table';
+
+
 
 
 
@@ -88,6 +94,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     ConfirmDialogComponent,
     ErrorMessageDialogComponent,
     MessageDialogComponent,
+    ConfirmApoinmentComponent,
 
   ],
   imports: [
@@ -139,7 +146,9 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     DragDropModule,
     NzMenuModule,
     NzDropDownModule,
-
+    MatCheckboxModule,
+    MatPaginatorModule,
+    NzTableModule
 
 
   ],

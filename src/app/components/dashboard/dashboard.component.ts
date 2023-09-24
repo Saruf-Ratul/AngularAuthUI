@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     public auth: AuthService,
     private userService: UserService,
     public router: Router,
-    public   apoinmentService: ApoinmentService,
+    public apoinmentService: ApoinmentService,
     ) { }
 
   ngOnInit() {
@@ -43,17 +43,6 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  // getUsers(){
-  //   this.userService.getAllUsers()
-  //   .subscribe({
-  //     next:(res=>{
-  //       console.log(res);
-  //       this.users = res
-  //       console.log(this.users);
-  //     })
-  //   })
-  // }
-
   getAllData(){
     this.apoinmentService.getAllData()
     .subscribe({
@@ -63,13 +52,16 @@ export class DashboardComponent implements OnInit {
     })
   };
 
-  addForm() {
-    this.router.navigate(['apoinment']);
-  };
+
 
   //Appointment
   appointment() {
     this.router.navigate(['apoinment']);
   };
+
+  //Patient
+  confirmScreen() {
+    this.router.navigate(['confirmApoinment']);
+  }
 
 }

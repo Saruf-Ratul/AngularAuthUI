@@ -22,6 +22,13 @@ export class ApoinmentService {
     return this.http.get<any>(`https://localhost:7066/api/tbAppointment/view`);
   }
 
+ //tbAppointment Confirmation
+  confirmData(itemId: any) {
+    return this.http.post(`https://localhost:7066/api/tbAppointment/add`, itemId);
+  }
+
+
+
   //tbAppType
   public GetAlltbAppType() {
     return this.http.get(`https://localhost:7066/api/tbAppointment/view_tbAppType`);

@@ -26,10 +26,11 @@
                     <li nz-menu-item>Alex</li>
                 </ul>
             </li>
-            <li nz-submenu nzTitle="Team" nzIcon="team">
+            <li nz-submenu nzTitle="Approved Screen" nzIcon="team">
                 <ul>
-                    <li nz-menu-item>Team 1</li>
-                    <li nz-menu-item>Team 2</li>
+                    <li nz-menu-item (click)="confirmScreen()">Confirm</li>
+                    <li nz-menu-item>Re-Confirm</li>
+                    <li nz-menu-item>View</li>
                 </ul>
             </li>
             <li nz-menu-item>
@@ -53,6 +54,7 @@
             </div>
         </nz-header>
         <nz-content>
+            <!-- *ngIf="router.url !== '/apoinment'" -->
             <nz-breadcrumb>
                 <nz-breadcrumb-item>Dashboard</nz-breadcrumb-item>
             </nz-breadcrumb>
@@ -60,6 +62,14 @@
                 <app-chartbord></app-chartbord>
             </div>
         </nz-content>
+        <!-- <nz-content *ngIf="router.url !== '/dashboard'">
+            <nz-breadcrumb>
+                <nz-breadcrumb-item>Confirm</nz-breadcrumb-item>
+            </nz-breadcrumb>
+            <div class="inner-content">
+                <app-confirm-apoinment></app-confirm-apoinment>
+            </div>
+        </nz-content> -->
         <nz-content>
             <div class="inner-content">
                 <h2>Appointment List</h2><br>
