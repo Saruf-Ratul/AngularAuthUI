@@ -15,7 +15,7 @@ export class ConfirmApoinmentComponent {
   tbAppApprovedData: any = [];
   tbAppFilterData: any = [];
 
-  approvedData : any = [];
+  approvedData: any = [];
   confirmModal?: NzModalRef;
 
   constructor(
@@ -32,7 +32,7 @@ export class ConfirmApoinmentComponent {
     this.apoinmentService.getAllData().subscribe((res: IApiResponse) => {
       if (res.isExecuted) {
         this.tbAppApprovedData = res.data;
-        this.tbAppFilterData = this.tbAppApprovedData.filter((item: any) => item.apP_Confirm == null );
+        this.tbAppFilterData = this.tbAppApprovedData.filter((item: any) => item.apP_Confirm == null);
       } else {
         this.toast.error({
           detail: 'ERROR',
@@ -43,18 +43,18 @@ export class ConfirmApoinmentComponent {
     });
   }
 
-  buttonAction(itemId : any, Value: any) {
+  buttonAction(itemId: any, Value: any) {
     this.itemId = itemId;
     if (Value == "A") {
       this.confirmModal = this.modal.confirm({
         nzTitle: 'Do you Want to Approved these items?',
         nzContent: 'When clicked the OK button, this dialog will be closed after 1 second',
         nzOnOk: () =>
-        new Promise((resolve, reject) => {
-          setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-        }).catch(() =>
-        this.approved(this.itemId)
-        )
+          new Promise((resolve, reject) => {
+            setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+          }).catch(() =>
+            this.approved(this.itemId)
+          )
       });
     }
     else if (Value == "E") {
@@ -65,19 +65,21 @@ export class ConfirmApoinmentComponent {
     }
   }
 
-  approved(itemId : any ) {
-    console.log("itemId",itemId);
-    this.apoinmentService.confirmData(itemId).subscribe((res: IApiResponse) => {
-      if (res.isExecuted) {
-        console.log("@@@@@@@@@@@@@@@@@",res.data);
+  approved(itemId: any) {
+    console.log("itemId", itemId);
+    const requestBody = {
+      app_ID: itemId,
+    };
+    this.apoinmentService.confirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
+      if (res.message == "Appointment approved successfully.") {
         this.approvedData = res.data;
-        console.log("#############",this.approvedData);
-        this.GetAppApprovedData();
         this.toast.success({
           detail: 'Approved',
           summary: 'Type Executed',
           duration: 5000,
         });
+
+
       } else {
         this.toast.error({
           detail: 'ERROR',
