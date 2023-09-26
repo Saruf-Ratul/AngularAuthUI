@@ -40,11 +40,11 @@
                         <td>{{appointment.vPhone}}</td>
                         <td>{{appointment.email}}</td>
                         <td style="text-align: right;">
-                            <button nz-button nzType="primary" (click)="approved(itemId)">Approved</button>
+                            <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'A')">Approved</button>
                             <nz-divider nzType="vertical"></nz-divider>
-                            <button nz-button nzType="primary">Edit</button>
+                            <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'E')">Edit</button>
                             <nz-divider nzType="vertical"></nz-divider>
-                            <button nz-button nzDanger nzType="primary">Delete</button>
+                            <button nz-button nzDanger nzType="primary" (click)="buttonAction(appointment.app_ID,'D')">Delete</button>
                         </td>
                     </tr>
                 </tbody>

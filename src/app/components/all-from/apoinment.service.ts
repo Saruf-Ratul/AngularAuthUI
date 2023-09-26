@@ -23,8 +23,11 @@ export class ApoinmentService {
   }
 
  //tbAppointment Confirmation
-  confirmData(itemId: any) {
-    return this.http.post(`https://localhost:7066/api/tbAppointment/add`, itemId);
+  confirmData(app_ID: any) {
+    console.log("itemId%%%%%%%%%%",app_ID);
+    return this.http.put(`https://localhost:7066/api/tbAppointment/find`, app_ID);
+
+    // return this.http.put(`https://localhost:7066/api/tbAppointment/find/${app_ID}`);
   }
 
 

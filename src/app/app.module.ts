@@ -70,7 +70,7 @@ import { ConfirmApoinmentComponent } from './components/all-from/confirm-apoinme
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NzTableModule } from 'ng-zorro-antd/table';
-
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 
@@ -148,7 +148,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzDropDownModule,
     MatCheckboxModule,
     MatPaginatorModule,
-    NzTableModule
+    NzTableModule,
+    NzModalModule,
 
 
   ],
