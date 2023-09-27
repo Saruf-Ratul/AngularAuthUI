@@ -3,6 +3,7 @@ import { ApoinmentService } from '../apoinment.service';
 import { IApiResponse } from 'src/app/shared/container/api-response.model';
 import { NgToastService } from 'ng-angular-popup';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { duration } from 'moment';
 
 @Component({
   selector: 'app-confirm-apoinment',
@@ -16,6 +17,7 @@ export class ConfirmApoinmentComponent {
   tbAppFilterData: any = [];
 
   approvedData: any = [];
+  deleteData: any = [];
   confirmModal?: NzModalRef;
 
   constructor(
@@ -47,43 +49,97 @@ export class ConfirmApoinmentComponent {
     this.itemId = itemId;
     if (Value == "A") {
       this.confirmModal = this.modal.confirm({
-        nzTitle: 'Do you Want to Approved these items?',
+        nzTitle: 'Do you want to approved these items?',
         nzContent: 'When clicked the OK button, this dialog will be closed after 1 second',
         nzOnOk: () =>
-          new Promise((resolve, reject) => {
-            setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-          }).catch(() =>
-            this.approved(this.itemId)
-          )
+          new Promise<void>((resolve, reject) => {
+            setTimeout(() => {
+              this.approved(this.itemId);
+              resolve();
+            }, 1000);
+          }).catch(() => {
+            this.toast.error({
+              detail: 'ERROR',
+              summary: 'Call Approved Function Not Working',
+              duration: 5000,
+            });
+
+          })
       });
     }
     else if (Value == "E") {
       // this.showConfirm();
     }
     else if (Value == "D") {
-      // this.showConfirm();
+      this.confirmModal = this.modal.confirm({
+        nzTitle: 'Do you want to delete these items?',
+        nzContent: 'When clicked the OK button, this dialog will be closed after 1 second',
+        nzOnOk: () =>
+          new Promise<void>((resolve, reject) => {
+            setTimeout(() => {
+              this.delete(this.itemId);
+              resolve();
+            }, 1000);
+          }).catch(() => {
+            this.toast.error({
+              detail: 'ERROR',
+              summary: 'Call Delete Function Not Working',
+              duration: 5000,
+            });
+
+          })
+      });
     }
-  }
+  };
 
   approved(itemId: any) {
-    console.log("itemId", itemId);
     const requestBody = {
       app_ID: itemId,
     };
     this.apoinmentService.confirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
-      if (res.message == "Appointment approved successfully.") {
+
+      if (res.isExecuted === true) {
         this.approvedData = res.data;
         this.toast.success({
           detail: 'Approved',
-          summary: 'Type Executed',
-          duration: 5000,
+          summary: 'Data Approved',
+          duration: 1000,
         });
-
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
 
       } else {
         this.toast.error({
           detail: 'ERROR',
-          summary: 'Type Not Executed',
+          summary: 'Data Not Approved',
+          duration: 5000,
+        });
+      }
+    });
+  };
+
+  delete(itemId: any) {
+    const requestBody = {
+      app_ID: itemId,
+    };
+    this.apoinmentService.deleteData(itemId, requestBody).subscribe((res: IApiResponse) => {
+
+      if (res.isExecuted === true) {
+        this.deleteData = res.data;
+        this.toast.warning({
+          detail: 'Deleted',
+          summary: 'Data Deleted Successfully',
+          duration: 1000,
+        });
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+
+      } else {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Data Deleted Unsuccessfully',
           duration: 5000,
         });
       }

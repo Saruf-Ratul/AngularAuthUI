@@ -24,13 +24,16 @@ export class ApoinmentService {
 
  //tbAppointment Confirmation
   confirmData(app_ID: any , requestBody: any) {
-    console.log("itemId%%%%%%%%%%",app_ID);
-    // return this.http.put(`https://localhost:7066/api/tbAppointment/find`, app_ID);
     return this.http.put(`https://localhost:7066/api/tbAppointment/approve/${app_ID}`, requestBody);
-
-    // return this.http.put(`https://localhost:7066/api/tbAppointment/find/${app_ID}`);
+  }
+ //tbAppointment Delete
+  deleteData(app_ID: any , requestBody: any) {
+    return this.http.delete(`https://localhost:7066/api/tbAppointment/delete/${app_ID}`);
   }
 
+  userData(username: string ) {
+    return this.http.get(`https://localhost:7066/api/Apoinment/userData/${username}`);
+  }
 
 
   //tbAppType

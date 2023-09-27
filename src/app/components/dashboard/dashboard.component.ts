@@ -6,6 +6,7 @@ import { forkJoin } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApoinmentService } from '../all-from/apoinment.service';
+import { IApiResponse } from 'src/app/shared/container/api-response.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,12 @@ import { ApoinmentService } from '../all-from/apoinment.service';
 export class DashboardComponent implements OnInit {
   fullName!: string;
   users!: User[];
-  appointmentData : any = [];
+  appointmentData: any = [];
+  userData: any;
+  username: string | any;
+  admin : string | any;
+  active : string | any;
+
 
   constructor(
     public userStore: UserStoreService,
@@ -23,7 +29,7 @@ export class DashboardComponent implements OnInit {
     private userService: UserService,
     public router: Router,
     public apoinmentService: ApoinmentService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.userStore.getFullName()
@@ -31,25 +37,38 @@ export class DashboardComponent implements OnInit {
         let value = this.auth.getFullNameFromToken();
         this.fullName = res || value;
       })
-    // this.getUsers();
-    this.getAllData();
+    this.getUsers(),
+      this.getAllData();
   }
 
   logOut() {
     this.auth.signOut();
   };
 
-  loadFullName() {
+  getUsers() {
+    let authValue = this.auth.decodedToken();
+    this.username = authValue.name;
+    this.apoinmentService.userData(this.username).subscribe((res: IApiResponse) => {
+      if (res.isExecuted === true) {
+        this.userData = res.data;
+        this.admin = this.userData.admin;
+        console.log(this.admin);
+        this.active = this.userData.active;
+      } else {
+        this.userData = null;
+      }
+    });
+  };
 
-  }
 
-  getAllData(){
+
+  getAllData() {
     this.apoinmentService.getAllData()
-    .subscribe({
-      next:(res=>{
-        this.appointmentData = res.data
+      .subscribe({
+        next: (res => {
+          this.appointmentData = res.data
+        })
       })
-    })
   };
 
 

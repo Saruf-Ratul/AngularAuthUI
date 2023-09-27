@@ -10,7 +10,7 @@
                 <span nz-icon nzType="plus" nzTheme="outline"></span>
                 <span (click)="appointment()">New Appointment</span>
             </li>
-            <li nz-menu-item>
+            <li nz-menu-item *ngIf="admin === 'A' && active ==='A'">
                 <span nz-icon nzType="pie-chart"></span>
                 <span>Dashboard</span>
             </li>
@@ -19,21 +19,21 @@
                 <span>Home</span>
             </li>
 
-            <li nz-submenu nzTitle="User" nzIcon="user">
+            <li nz-submenu nzTitle="User" nzIcon="user" *ngIf="admin === 'A' && active ==='A'">
                 <ul>
                     <li nz-menu-item>Tom</li>
                     <li nz-menu-item>Bill</li>
                     <li nz-menu-item>Alex</li>
                 </ul>
             </li>
-            <li nz-submenu nzTitle="Approved Screen" nzIcon="team">
+            <li nz-submenu nzTitle="Approved Screen" nzIcon="team" *ngIf="admin === 'A' && active ==='A'">
                 <ul>
                     <li nz-menu-item (click)="confirmScreen()">Confirm</li>
                     <li nz-menu-item>Re-Confirm</li>
                     <li nz-menu-item>View</li>
                 </ul>
             </li>
-            <li nz-menu-item>
+            <li nz-menu-item *ngIf="admin === 'A' && active ==='A'">
                 <span nz-icon nzType="file"></span>
                 <span>File</span>
             </li>
@@ -53,8 +53,7 @@
                 </div>
             </div>
         </nz-header>
-        <nz-content>
-            <!-- *ngIf="router.url !== '/apoinment'" -->
+        <nz-content *ngIf="admin === 'A' && active ==='A'">
             <nz-breadcrumb>
                 <nz-breadcrumb-item>Dashboard</nz-breadcrumb-item>
             </nz-breadcrumb>
@@ -62,15 +61,7 @@
                 <app-chartbord></app-chartbord>
             </div>
         </nz-content>
-        <!-- <nz-content *ngIf="router.url !== '/dashboard'">
-            <nz-breadcrumb>
-                <nz-breadcrumb-item>Confirm</nz-breadcrumb-item>
-            </nz-breadcrumb>
-            <div class="inner-content">
-                <app-confirm-apoinment></app-confirm-apoinment>
-            </div>
-        </nz-content> -->
-        <nz-content>
+        <nz-content *ngIf="admin === 'A' && active ==='A'">
             <div class="inner-content">
                 <h2>Appointment List</h2><br>
                 <div class="table-responsive">
@@ -102,6 +93,26 @@
                     </table>
                 </div>
             </div>
+        </nz-content>
+        <nz-content *ngIf="admin === null && active === null">
+            <p style="text-align: center; padding-top: 20px;">Welcome To Navana</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </nz-content>
         <nz-footer>Navana Limited ©2023 Implement By Navana Group IT</nz-footer>
     </nz-layout>
