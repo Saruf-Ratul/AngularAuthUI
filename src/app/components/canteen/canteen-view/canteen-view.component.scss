@@ -1,0 +1,48 @@
+[nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+nz-button-group [nz-button] {
+    margin-right: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.center {
+    border: 1px solid black;
+}
+
+.text {
+    color: rgb(0, 0, 0);
+    padding: auto;
+    font-family: Lato;
+    text-align: center;
+}
+
+nz-select {
+    width: 200px;
+}
+
+nz-date-picker {
+    margin: 0 8px 12px 0;
+    width: 200px;
+}
+
+nz-time-picker {
+    margin: 0 8px 12px 0;
+    width: 200px;
+}
+
+input {
+    margin: 0 8px 12px 0;
+    width: 200px;
+}
+
+.ant-progress {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}

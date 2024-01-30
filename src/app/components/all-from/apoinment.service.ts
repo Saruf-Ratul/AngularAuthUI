@@ -26,10 +26,24 @@ export class ApoinmentService {
   confirmData(app_ID: any , requestBody: any) {
     return this.http.put(`https://localhost:7066/api/tbAppointment/approve/${app_ID}`, requestBody);
   }
+  reconfirmData(app_ID: any , requestBody: any) {
+    return this.http.put(`https://localhost:7066/api/tbAppointment/reapprove/${app_ID}`, requestBody);
+  }
  //tbAppointment Delete
   deleteData(app_ID: any , requestBody: any) {
     return this.http.delete(`https://localhost:7066/api/tbAppointment/delete/${app_ID}`);
   }
+  //  //tbAppointment Edit
+  //  editData(app_ID: any , requestBody: any) {
+
+  //   return this.http.put(`https://localhost:7066/api/tbAppointment/edit/${app_ID}`, requestBody);
+  // }
+  //  //tbAppointment Edit Id
+  // getIdData(id : any){
+  //   console.log("Test",id)
+  //   return this.http.get<any>(`https://localhost:7066/api/tbAppointment/view/${id}`);
+  // }
+
 
   userData(username: string ) {
     return this.http.get(`https://localhost:7066/api/Apoinment/userData/${username}`);

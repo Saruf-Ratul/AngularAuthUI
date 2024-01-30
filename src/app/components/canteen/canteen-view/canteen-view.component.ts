@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { ApoinmentService } from '../apoinment.service';
-import { IApiResponse } from 'src/app/shared/container/api-response.model';
 import { NgToastService } from 'ng-angular-popup';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
-import { duration } from 'moment';
+import { ApoinmentService } from '../../all-from/apoinment.service';
 import { Router } from '@angular/router';
+import { IApiResponse } from 'src/app/models/api-response.model';
 
 @Component({
-  selector: 'app-confirm-apoinment',
-  templateUrl: './confirm-apoinment.component.html',
-  styleUrls: ['./confirm-apoinment.component.scss']
+  selector: 'app-canteen-view',
+  templateUrl: './canteen-view.component.html',
+  styleUrls: ['./canteen-view.component.scss']
 })
-export class ConfirmApoinmentComponent {
+export class CanteenViewComponent {
+
 
   itemId: number | any;
   tbAppApprovedData: any = [];
@@ -30,6 +30,7 @@ export class ConfirmApoinmentComponent {
 
   ngOnInit(): void {
     this.GetAppApprovedData();
+    this.applyFilter(event);
   }
 
   GetAppApprovedData() {
@@ -112,64 +113,83 @@ export class ConfirmApoinmentComponent {
   };
 
   approved(itemId: any) {
-    const requestBody = {
-      app_ID: itemId,
-    };
-    this.apoinmentService.confirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
+    // const requestBody = {
+    //   app_ID: itemId,
+    // };
+    // this.apoinmentService.confirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
+    //   if (res.isExecuted === true) {
+    //     this.approvedData = res.data;
+    //     this.toast.success({
+    //       detail: 'Approved',
+    //       summary: 'Data Approved',
+    //       duration: 1000,
+    //     });
+    //     setTimeout(() => {
+    //       location.reload();
+    //     }, 2000);
 
-      if (res.isExecuted === true) {
-        this.approvedData = res.data;
-        this.toast.success({
-          detail: 'Approved',
-          summary: 'Data Approved',
-          duration: 1000,
-        });
-        setTimeout(() => {
-          location.reload();
-        }, 2000);
-
-      } else {
-        this.toast.error({
-          detail: 'ERROR',
-          summary: 'Data Not Approved',
-          duration: 5000,
-        });
-      }
-    });
+    //   } else {
+    //     this.toast.error({
+    //       detail: 'ERROR',
+    //       summary: 'Data Not Approved',
+    //       duration: 5000,
+    //     });
+    //   }
+    // });
   };
 
   delete(itemId: any) {
-    const requestBody = {
-      app_ID: itemId,
-    };
-    this.apoinmentService.deleteData(itemId, requestBody).subscribe((res: IApiResponse) => {
+    // const requestBody = {
+    //   app_ID: itemId,
+    // };
+    // this.apoinmentService.deleteData(itemId, requestBody).subscribe((res: IApiResponse) => {
 
-      if (res.isExecuted === true) {
-        this.deleteData = res.data;
-        this.toast.warning({
-          detail: 'Deleted',
-          summary: 'Data Deleted Successfully',
-          duration: 1000,
-        });
-        setTimeout(() => {
-          location.reload();
-        }, 2000);
+    //   if (res.isExecuted === true) {
+    //     this.deleteData = res.data;
+    //     this.toast.warning({
+    //       detail: 'Deleted',
+    //       summary: 'Data Deleted Successfully',
+    //       duration: 1000,
+    //     });
+    //     setTimeout(() => {
+    //       location.reload();
+    //     }, 2000);
 
-      } else {
-        this.toast.error({
-          detail: 'ERROR',
-          summary: 'Data Deleted Unsuccessfully',
-          duration: 5000,
-        });
-      }
-    });
+    //   } else {
+    //     this.toast.error({
+    //       detail: 'ERROR',
+    //       summary: 'Data Deleted Unsuccessfully',
+    //       duration: 5000,
+    //     });
+    //   }
+    // });
   }
 
   edit(itemId: any) {
     this.router.navigate(['/apoinment', { id: itemId }]);
   };
 
+  applyFilter(event: any) {
+    const searchText = event.target.value.toLowerCase();
+    this.tbAppFilterData = this.tbAppApprovedData.filter((item: any) =>
+      item.model.toLowerCase().includes(searchText) ||
+      item.model_Year.toLowerCase().includes(searchText) ||
+      item.km.toLowerCase().includes(searchText) ||
+      item.remarks.toLowerCase().includes(searchText) ||
+      item.address.toLowerCase().includes(searchText) ||
+      item.vPhone.toLowerCase().includes(searchText) ||
+      item.email.toLowerCase().includes(searchText)
+    );
+  }
 
 
+
+  back() {
+    window.history.back();
+  }
+
+  home() {
+    window.location.href = '/dashboard';
+  }
 
 }

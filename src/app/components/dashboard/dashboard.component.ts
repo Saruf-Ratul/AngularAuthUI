@@ -83,4 +83,16 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['confirmApoinment']);
   }
 
+  reconfirmScreen(){
+    this.router.navigate(['reconfirmApoinment']);
+  }
+  viewConfirmApoinment(){
+    this.router.navigate(['viewConfirmApoinment']);
+  }
+
+  canteenScreen() {
+    this.router.navigate(['canteen']);
+  }
+
+
 }

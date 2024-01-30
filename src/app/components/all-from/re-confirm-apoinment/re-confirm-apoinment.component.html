@@ -1,0 +1,54 @@
+<h2 style="text-align: center;">Appointment List</h2>
+<div nz-row>
+    <div nz-col nzSpan="24">
+        <form nz-form>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="1">Search</nz-form-label>
+                <nz-form-control [nzSpan]="22">
+                    <input nz-input name="search" type="search" id="search">
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+</div>
+
+<nz-card>
+    <div class="inner-content">
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Model Year</th>
+                        <th scope="col">Kilometer</th>
+                        <th scope="col">Remarks</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col" style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appointment of tbReAppFilterData; let i= index">
+                        <td>{{i+1}}</td>
+                        <td>{{appointment.model}}</td>
+                        <td>{{appointment.model_Year}}</td>
+                        <td>{{appointment.km}}</td>
+                        <td>{{appointment.remarks}}</td>
+                        <td>{{appointment.address}}</td>
+                        <td>{{appointment.vPhone}}</td>
+                        <td>{{appointment.email}}</td>
+                        <td style="text-align: right;">
+                            <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'A')">Approved</button>
+                            <nz-divider nzType="vertical"></nz-divider>
+                            <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'E')">Edit</button>
+                            <nz-divider nzType="vertical"></nz-divider>
+                            <button nz-button nzDanger nzType="primary" (click)="buttonAction(appointment.app_ID,'D')">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</nz-card>

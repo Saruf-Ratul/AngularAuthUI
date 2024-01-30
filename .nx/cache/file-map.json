@@ -1,0 +1,853 @@
+{
+  "version": "6.0",
+  "nxVersion": "16.8.1",
+  "deps": {
+    "@angular/animations": "^15.2.1",
+    "@angular/cdk": "^15.2.1",
+    "@angular/common": "^15.2.1",
+    "@angular/compiler": "^15.2.1",
+    "@angular/core": "^15.2.1",
+    "@angular/flex-layout": "^15.0.0-beta.42",
+    "@angular/forms": "^15.2.1",
+    "@angular/material": "^15.2.1",
+    "@angular/material-moment-adapter": "^16.2.2",
+    "@angular/platform-browser": "^15.2.1",
+    "@angular/platform-browser-dynamic": "^15.2.1",
+    "@angular/router": "^15.2.1",
+    "@auth0/angular-jwt": "^5.1.0",
+    "@ngxs/devtools-plugin": "^3.8.1",
+    "@ngxs/logger-plugin": "^3.8.1",
+    "@ngxs/storage-plugin": "^3.8.1",
+    "@ngxs/store": "^3.8.1",
+    "@riapacheco/yutes": "^4.2.4",
+    "@syncfusion/ej2-angular-calendars": "^18.3.53",
+    "angular-fusioncharts": "^3.0.4",
+    "angular-google-charts": "^2.2.3",
+    "angular-sanitize": "^1.8.2",
+    "canvasjs": "^1.8.3",
+    "chart.js": "3.7.1",
+    "chartjs-chart-sankey": "0.9.0",
+    "chartjs-plugin-datalabels": "2.0.0",
+    "file-saver": "^2.0.5",
+    "fusioncharts": "^3.15.3",
+    "global": "^4.4.0",
+    "html2canvas": "^1.3.2",
+    "igniteui-angular": "^11.1.38",
+    "jsdf": "^0.3.2",
+    "jspdf": "^2.4.0",
+    "moment": "^2.29.4",
+    "ng-angular-popup": "^0.1.2",
+    "ng-image-slider": "^2.8.0",
+    "ng-scrollbars": "0.0.11",
+    "ng-zorro-antd": "^15.1.0",
+    "ng2-charts": "^5.0.3",
+    "ng2-pdf-viewer": "^6.4.1",
+    "pdfjs-dist": "^2.5.207",
+    "pdfmake": "^0.1.70",
+    "primeicons": "^4.0.0",
+    "primeng": "^10.0.3",
+    "public-ip": "^6.0.1",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "xlsx": "^0.17.2",
+    "zone.js": "~0.11.4",
+    "@angular-devkit/build-angular": "^15.2.1",
+    "@angular-devkit/core": "~15.2.1",
+    "@angular-devkit/schematics": "~15.2.1",
+    "@angular/cli": "~15.2.1",
+    "@angular/compiler-cli": "^15.2.1",
+    "@nx/angular": "16.8.1",
+    "@nx/workspace": "16.8.1",
+    "@schematics/angular": "~15.2.1",
+    "@types/canvasjs": "^1.9.6",
+    "@types/jasmine": "~4.0.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "autoprefixer": "^10.4.16",
+    "codelyzer": "^0.0.28",
+    "jasmine-core": "~4.1.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~5.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "nx": "16.8.1",
+    "nx-cloud": "latest",
+    "postcss": "^8.4.33",
+    "protractor": "^3.3.0",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.9.5"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "projectFileMap": {
+    "AngularAuthUI": [
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13044518069027839699"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "10256699914034591733"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "2358750272457435367"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/project-graph.html",
+        "hash": "17036869540637447991"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/3rdpartylicenses.txt",
+        "hash": "5667550289807473445"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/environment.js",
+        "hash": "6298082025920057292"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/favicon.ico",
+        "hash": "9303420814833116677"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/main.js",
+        "hash": "13265026694796919156",
+        "deps": [
+          [
+            "npm:util",
+            "dynamic"
+          ]
+        ]
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/polyfills.js",
+        "hash": "5308660597376693218"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/runtime.js",
+        "hash": "9652903316845995179"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/styles.css",
+        "hash": "2125456314194136822"
+      },
+      {
+        "file": ".nx/cache/nx-console-project-graph/static/styles.js",
+        "hash": "13596360365094399219"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "3977640103248242215"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "8902071992701957866"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "5331566439708925252"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "4815948323043747099"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "14865080748335724445"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
+      },
+      {
+        "file": "README.md",
+        "hash": "9147269311051243907"
+      },
+      {
+        "file": "angular.json",
+        "hash": "303426039105551329"
+      },
+      {
+        "file": "karma.conf.js",
+        "hash": "12218777373939623728",
+        "deps": [
+          [
+            "npm:karma-jasmine",
+            "dynamic"
+          ],
+          [
+            "npm:karma-chrome-launcher",
+            "dynamic"
+          ],
+          [
+            "npm:karma-jasmine-html-reporter",
+            "dynamic"
+          ],
+          [
+            "npm:karma-coverage",
+            "dynamic"
+          ],
+          [
+            "npm:@angular-devkit/build-angular",
+            "dynamic"
+          ],
+          [
+            "npm:path",
+            "dynamic"
+          ]
+        ]
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "10652223068382652171"
+      },
+      {
+        "file": "package.json",
+        "hash": "515777201508751240",
+        "deps": [
+          "npm:@angular/animations",
+          "npm:@angular/cdk",
+          "npm:@angular/common",
+          "npm:@angular/compiler",
+          "npm:@angular/core",
+          "npm:@angular/flex-layout",
+          "npm:@angular/forms",
+          "npm:@angular/material",
+          "npm:@angular/material-moment-adapter",
+          "npm:@angular/platform-browser",
+          "npm:@angular/platform-browser-dynamic",
+          "npm:@angular/router",
+          "npm:@auth0/angular-jwt",
+          "npm:@ngxs/devtools-plugin",
+          "npm:@ngxs/logger-plugin",
+          "npm:@ngxs/storage-plugin",
+          "npm:@ngxs/store",
+          "npm:@riapacheco/yutes",
+          "npm:@syncfusion/ej2-angular-calendars",
+          "npm:angular-fusioncharts",
+          "npm:angular-google-charts",
+          "npm:angular-sanitize",
+          "npm:canvasjs",
+          "npm:chart.js",
+          "npm:chartjs-chart-sankey",
+          "npm:chartjs-plugin-datalabels",
+          "npm:file-saver",
+          "npm:fusioncharts",
+          "npm:global",
+          "npm:html2canvas",
+          "npm:igniteui-angular",
+          "npm:jsdf",
+          "npm:jspdf",
+          "npm:moment",
+          "npm:ng-angular-popup",
+          "npm:ng-image-slider",
+          "npm:ng-scrollbars",
+          "npm:ng-zorro-antd",
+          "npm:ng2-charts",
+          "npm:ng2-pdf-viewer",
+          "npm:pdfjs-dist",
+          "npm:pdfmake",
+          "npm:primeicons",
+          "npm:primeng",
+          "npm:public-ip",
+          "npm:rxjs",
+          "npm:tslib",
+          "npm:xlsx",
+          "npm:zone.js",
+          "npm:@angular-devkit/build-angular",
+          "npm:@angular-devkit/core",
+          "npm:@angular-devkit/schematics",
+          "npm:@angular/cli",
+          "npm:@angular/compiler-cli",
+          "npm:@nx/angular",
+          "npm:@nx/workspace",
+          "npm:@schematics/angular",
+          "npm:@types/canvasjs",
+          "npm:@types/jasmine",
+          "npm:@types/jasminewd2",
+          "npm:@types/node",
+          "npm:autoprefixer",
+          "npm:codelyzer",
+          "npm:jasmine-core",
+          "npm:jasmine-spec-reporter",
+          "npm:karma",
+          "npm:karma-chrome-launcher",
+          "npm:karma-coverage",
+          "npm:karma-coverage-istanbul-reporter",
+          "npm:karma-jasmine",
+          "npm:karma-jasmine-html-reporter",
+          "npm:nx",
+          "npm:nx-cloud",
+          "npm:postcss",
+          "npm:protractor",
+          "npm:tailwindcss",
+          "npm:ts-node",
+          "npm:tslint",
+          "npm:typescript"
+        ]
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "6387099855487402320",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "14379419832704491295"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "13032168445521073201",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "6023564910264553560",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "14879471570738349936",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/platform-browser",
+          "npm:@angular/common",
+          "npm:@angular/forms",
+          "npm:ng-angular-popup",
+          "npm:@angular/material",
+          "npm:angular-google-charts",
+          "npm:@angular/material-moment-adapter",
+          "npm:@ngxs/store",
+          "npm:@ngxs/devtools-plugin",
+          "npm:ng-zorro-antd",
+          "npm:@ant-design/icons-angular",
+          "npm:@angular/cdk"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/add-apoinment/add-apoinment.component.html",
+        "hash": "9941736155683687649"
+      },
+      {
+        "file": "src/app/components/all-from/add-apoinment/add-apoinment.component.scss",
+        "hash": "7522218521154221941"
+      },
+      {
+        "file": "src/app/components/all-from/add-apoinment/add-apoinment.component.ts",
+        "hash": "905734924630051043",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:@angular/router",
+          "npm:ng-angular-popup",
+          "npm:rxjs",
+          "npm:ng-zorro-antd",
+          "npm:moment"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/apoinment.service.ts",
+        "hash": "15248989797545474147",
+        "deps": [
+          "npm:@angular/common",
+          "npm:@angular/core",
+          "npm:@angular/router",
+          "npm:rxjs"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/confirm-apoinment/confirm-apoinment.component.html",
+        "hash": "17444605365573903336"
+      },
+      {
+        "file": "src/app/components/all-from/confirm-apoinment/confirm-apoinment.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/all-from/confirm-apoinment/confirm-apoinment.component.spec.ts",
+        "hash": "7846773149656954783",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/confirm-apoinment/confirm-apoinment.component.ts",
+        "hash": "17533687304157151987",
+        "deps": [
+          "npm:@angular/core",
+          "npm:ng-angular-popup",
+          "npm:ng-zorro-antd",
+          "npm:moment",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/re-confirm-apoinment/re-confirm-apoinment.component.html",
+        "hash": "14422723276294302919"
+      },
+      {
+        "file": "src/app/components/all-from/re-confirm-apoinment/re-confirm-apoinment.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/all-from/re-confirm-apoinment/re-confirm-apoinment.component.spec.ts",
+        "hash": "4521859574555881407",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/re-confirm-apoinment/re-confirm-apoinment.component.ts",
+        "hash": "3014406876362527143",
+        "deps": [
+          "npm:@angular/core",
+          "npm:ng-zorro-antd",
+          "npm:ng-angular-popup",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/view-apoinment/view-apoinment.component.html",
+        "hash": "2626583903176505423"
+      },
+      {
+        "file": "src/app/components/all-from/view-apoinment/view-apoinment.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/all-from/view-apoinment/view-apoinment.component.spec.ts",
+        "hash": "11421931618588309153",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/all-from/view-apoinment/view-apoinment.component.ts",
+        "hash": "6683913401249528041",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/chart/chartbord/chartbord.component.html",
+        "hash": "9005211838877799428"
+      },
+      {
+        "file": "src/app/components/chart/chartbord/chartbord.component.scss",
+        "hash": "12802373861382023344"
+      },
+      {
+        "file": "src/app/components/chart/chartbord/chartbord.component.spec.ts",
+        "hash": "2630430090958878198",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/chart/chartbord/chartbord.component.ts",
+        "hash": "307963993029977486",
+        "deps": [
+          "npm:@angular/core",
+          "npm:angular-google-charts"
+        ]
+      },
+      {
+        "file": "src/app/components/dashboard/backup.html",
+        "hash": "8874817232429766170"
+      },
+      {
+        "file": "src/app/components/dashboard/dashboard.component.css",
+        "hash": "5693013283294848994"
+      },
+      {
+        "file": "src/app/components/dashboard/dashboard.component.html",
+        "hash": "9822185159985208623"
+      },
+      {
+        "file": "src/app/components/dashboard/dashboard.component.spec.ts",
+        "hash": "16183089930767752616",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/platform-browser"
+        ]
+      },
+      {
+        "file": "src/app/components/dashboard/dashboard.component.ts",
+        "hash": "14234158012188813551",
+        "deps": [
+          "npm:@angular/core",
+          "npm:rxjs",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/login/login.component.css",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/login/login.component.html",
+        "hash": "1415411992303397509"
+      },
+      {
+        "file": "src/app/components/login/login.component.spec.ts",
+        "hash": "9760254787893327942",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/platform-browser"
+        ]
+      },
+      {
+        "file": "src/app/components/login/login.component.ts",
+        "hash": "7534949903592844204",
+        "deps": [
+          "npm:@angular/router",
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:ng-angular-popup"
+        ]
+      },
+      {
+        "file": "src/app/components/reset-password/reset-password.component.html",
+        "hash": "11534380789107252032"
+      },
+      {
+        "file": "src/app/components/reset-password/reset-password.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/reset-password/reset-password.component.spec.ts",
+        "hash": "14290496084362134730",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/reset-password/reset-password.component.ts",
+        "hash": "821407194482949403",
+        "deps": [
+          "npm:ng-angular-popup",
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/signup/signup.component.css",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/signup/signup.component.html",
+        "hash": "6960685044441077438"
+      },
+      {
+        "file": "src/app/components/signup/signup.component.spec.ts",
+        "hash": "5286935272854232769",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/platform-browser"
+        ]
+      },
+      {
+        "file": "src/app/components/signup/signup.component.ts",
+        "hash": "2004135265898917264",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:ng-angular-popup",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/guards/auth.guard.ts",
+        "hash": "9269048369052393490",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/router",
+          "npm:ng-angular-popup",
+          "npm:rxjs"
+        ]
+      },
+      {
+        "file": "src/app/helpers/confirm-password.validator.ts",
+        "hash": "4354800662118998128",
+        "deps": [
+          "npm:@angular/forms"
+        ]
+      },
+      {
+        "file": "src/app/helpers/validateform.ts",
+        "hash": "3456061785263504796",
+        "deps": [
+          "npm:@angular/forms"
+        ]
+      },
+      {
+        "file": "src/app/interceptors/token.interceptor.ts",
+        "hash": "5183774029606151422",
+        "deps": [
+          "npm:@angular/router",
+          "npm:@angular/core",
+          "npm:@angular/common",
+          "npm:rxjs",
+          "npm:ng-angular-popup"
+        ]
+      },
+      {
+        "file": "src/app/models/ILogin.ts",
+        "hash": "4633948039610572721"
+      },
+      {
+        "file": "src/app/models/api-response.model.ts",
+        "hash": "9626947258896975890"
+      },
+      {
+        "file": "src/app/models/reset-password.model.ts",
+        "hash": "13690666348689803367"
+      },
+      {
+        "file": "src/app/models/token.interface.ts",
+        "hash": "6816807313689033736"
+      },
+      {
+        "file": "src/app/models/user.model.ts",
+        "hash": "10874776342009730979"
+      },
+      {
+        "file": "src/app/services/async.service.ts",
+        "hash": "15749405491229958919",
+        "deps": [
+          "npm:rxjs",
+          "npm:@angular/core",
+          "npm:@ngxs/store"
+        ]
+      },
+      {
+        "file": "src/app/services/auth.service.ts",
+        "hash": "17458831449327684648",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/common",
+          "npm:@auth0/angular-jwt",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/services/common.service.ts",
+        "hash": "15029934929424930705",
+        "deps": [
+          "npm:@angular/common",
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:@angular/material",
+          "npm:@angular/router",
+          "npm:rxjs"
+        ]
+      },
+      {
+        "file": "src/app/services/reset-password.service.ts",
+        "hash": "6721294103439610393",
+        "deps": [
+          "npm:@angular/common",
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/services/user-store.service.ts",
+        "hash": "15314238660019521452",
+        "deps": [
+          "npm:@angular/core",
+          "npm:rxjs"
+        ]
+      },
+      {
+        "file": "src/app/services/user.service.ts",
+        "hash": "7992890240083896235",
+        "deps": [
+          "npm:@angular/common",
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/shared/actions/async.action.ts",
+        "hash": "11931850106087941424"
+      },
+      {
+        "file": "src/app/shared/components/confirmation-dialog.component.ts",
+        "hash": "14867335482900503614",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/material"
+        ]
+      },
+      {
+        "file": "src/app/shared/components/error-message-dialog.component.ts",
+        "hash": "1565764581422855510",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/material"
+        ]
+      },
+      {
+        "file": "src/app/shared/components/message-dialog.component.ts",
+        "hash": "11515739942429510060",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/material"
+        ]
+      },
+      {
+        "file": "src/app/shared/container/api-container.model.ts",
+        "hash": "16244380477647299845"
+      },
+      {
+        "file": "src/app/shared/container/api-response.model.ts",
+        "hash": "8681570129233578215"
+      },
+      {
+        "file": "src/app/shared/model/async.model.ts",
+        "hash": "1239766468474503917"
+      },
+      {
+        "file": "src/app/shared/model/confirmation-dialog.model.ts",
+        "hash": "5229398600645001179",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/shared/model/message-dialog.model.ts",
+        "hash": "17762476989526353850",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/shared/model/ui-info.model.ts",
+        "hash": "12351157843572593099",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/shared/state/async.state.ts",
+        "hash": "17793823224483478003",
+        "deps": [
+          "npm:@ngxs/store"
+        ]
+      },
+      {
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/assets/css/custom.css",
+        "hash": "15480016792187228196"
+      },
+      {
+        "file": "src/assets/fonts/Roboto-Regular.otf",
+        "hash": "17564872774111385224"
+      },
+      {
+        "file": "src/assets/icons/material_icons.woff2",
+        "hash": "4104207687616766641"
+      },
+      {
+        "file": "src/assets/icons/navanalogo.svg",
+        "hash": "2042058805071650564"
+      },
+      {
+        "file": "src/assets/image/Technician-1.jpg",
+        "hash": "1064590855758329735"
+      },
+      {
+        "file": "src/assets/image/navanalogo.jpg",
+        "hash": "2511756575278340717"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "5406836414239361753"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "7061286098138713456"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3464744996580215640"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "6983979394227192885"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "10677612470474905821",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/platform-browser-dynamic"
+        ]
+      },
+      {
+        "file": "src/polyfills.ts",
+        "hash": "2035846685621806592",
+        "deps": [
+          "npm:zone.js"
+        ]
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "9581797130982698157"
+      },
+      {
+        "file": "src/test.ts",
+        "hash": "12412031923219697029",
+        "deps": [
+          "npm:zone.js",
+          "npm:@angular/core",
+          "npm:@angular/platform-browser-dynamic"
+        ]
+      },
+      {
+        "file": "src/theme.scss",
+        "hash": "2193104318072978626"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "11007907039180424371"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "9041030522571917449"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "2118090298778797664"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "17198424518534092990"
+      }
+    ]
+  }
+}

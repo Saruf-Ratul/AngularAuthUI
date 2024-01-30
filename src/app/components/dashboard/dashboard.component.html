@@ -6,37 +6,50 @@
         </div>
         <hr class="hr">
         <ul nz-menu nzTheme="dark" nzMode="inline">
-            <li nz-menu-item>
+            <!-- //admin === 'SA' || admin === 'A' || admin === 'AP'
+              SA = Super Admin
+              A = Admin
+              AP = Appointment
+              AA = Approved Appointment
+              TA = Ticketing Admin
+             -->
+            <li nz-menu-item *ngIf="(admin === 'SA' || admin === 'A' || admin === 'AP') && active === 'A'">
                 <span nz-icon nzType="plus" nzTheme="outline"></span>
                 <span (click)="appointment()">New Appointment</span>
             </li>
-            <li nz-menu-item *ngIf="admin === 'A' && active ==='A'">
+
+            <li nz-menu-item *ngIf="(admin === 'SA' || admin === 'A' || admin === 'TA') && active === 'A'">
                 <span nz-icon nzType="pie-chart"></span>
                 <span>Dashboard</span>
             </li>
             <li nz-menu-item>
                 <span nz-icon nzType="desktop"></span>
+                <span (click)="canteenScreen()">Canteen</span>
+            </li>
+
+            <li nz-menu-item>
+                <span nz-icon nzType="desktop"></span>
                 <span>Home</span>
             </li>
 
-            <li nz-submenu nzTitle="User" nzIcon="user" *ngIf="admin === 'A' && active ==='A'">
+            <!-- <li nz-submenu nzTitle="User" nzIcon="user" *ngIf="admin === 'A' && active ==='A'">
                 <ul>
                     <li nz-menu-item>Tom</li>
                     <li nz-menu-item>Bill</li>
                     <li nz-menu-item>Alex</li>
                 </ul>
-            </li>
-            <li nz-submenu nzTitle="Approved Screen" nzIcon="team" *ngIf="admin === 'A' && active ==='A'">
+            </li> -->
+            <li nz-submenu nzTitle="Approved Screen" nzIcon="team" *ngIf="admin === 'AA' && active ==='A'">
                 <ul>
                     <li nz-menu-item (click)="confirmScreen()">Confirm</li>
-                    <li nz-menu-item>Re-Confirm</li>
-                    <li nz-menu-item>View</li>
+                    <li nz-menu-item (click)="reconfirmScreen()">Re-Confirm</li>
+                    <li nz-menu-item (click)="viewConfirmApoinment()">View</li>
                 </ul>
             </li>
-            <li nz-menu-item *ngIf="admin === 'A' && active ==='A'">
+            <!-- <li nz-menu-item *ngIf="admin === 'AA' && active ==='A'">
                 <span nz-icon nzType="file"></span>
                 <span>File</span>
-            </li>
+            </li> -->
         </ul>
     </nz-sider>
     <nz-layout>
@@ -53,12 +66,15 @@
                 </div>
             </div>
         </nz-header>
-        <nz-content *ngIf="admin === 'A' && active ==='A'">
+        <nz-content *ngIf="active ==='A'">
             <nz-breadcrumb>
                 <nz-breadcrumb-item>Dashboard</nz-breadcrumb-item>
             </nz-breadcrumb>
-            <div class="inner-content">
+            <div class="inner-content" *ngIf="(admin === 'SA' || admin === 'A' || admin === 'AP'|| admin === 'AA') && active === 'A'">
                 <app-chartbord></app-chartbord>
+            </div>
+            <div class="inner-content" *ngIf="(admin === 'SA' || admin === 'A' || admin === 'TA') && active === 'A'">
+                <app-canteen-chart></app-canteen-chart>
             </div>
         </nz-content>
         <nz-content *ngIf="admin === 'A' && active ==='A'">

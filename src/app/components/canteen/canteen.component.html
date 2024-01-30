@@ -1,0 +1,37 @@
+<div nz-row style="padding-top: 5px; background-color: rgb(207, 163, 163); text-align: center;">
+    <div nz-col nzSpan="24">
+        <h2>Canteen System Module</h2>
+    </div>
+</div>
+
+<div style="display: flexbox; padding: 10px;">
+    <div nz-row>
+        <div nz-col nzSpan="2">
+            <!-- back Button -->
+            <button nz-button nzType="primary" nzSize="large" (click)="back()">
+    <span nz-icon nzType="left" nzTheme="outline"></span>
+    Back
+  </button>
+        </div>
+    </div>
+
+    <div style="background: #ECECEC;padding:30px;">
+        <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="8">
+                <nz-card nzTitle="View Details">
+                    <button nz-button nzType="primary" (click)="view()">View Details</button>
+                </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+                <nz-card nzTitle="Reports">
+                    <button nz-button nzType="primary" (click)="report()">Reports Details</button>
+                </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+                <nz-card nzTitle="Entry Form">
+                    <button nz-button nzType="primary" (click)="entry()">Entry Details</button>
+                </nz-card>
+            </div>
+        </div>
+    </div>
+</div>

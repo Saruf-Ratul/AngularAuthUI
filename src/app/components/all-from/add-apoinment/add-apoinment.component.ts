@@ -28,6 +28,7 @@ export class AddApoinmentComponent implements OnInit {
     { code: 'Y', desc: 'Yes' },
     { code: 'N', desc: 'No' }
   ];
+  tbAppData: any = [];
 
   selectedValue = null;
   date = null;
@@ -56,6 +57,7 @@ export class AddApoinmentComponent implements OnInit {
     this.paramId = this.route.snapshot.params['id'];
     this.formInfo();
     this.GetAlltbAppType();
+    // this.GetIdData(this.paramId);
   }
 
 
@@ -142,6 +144,62 @@ export class AddApoinmentComponent implements OnInit {
       }
     });
   }
+
+  // GetIdData(id : any) {
+  //   this.apoinmentService.getIdData(id).subscribe((res: IApiResponse) => {
+  //     if (res.isExecuted) {
+  //       this.tbAppData = res.data;
+  //       // this.form.patchValue(this.tbAppData);
+  //       this.form.patchValue({
+  //         tbAppType : this.tbAppData.tbAppType,
+  //         Schedule_Date: this.tbAppData.Schedule_Date,
+  //         Schedule_Time: this.tbAppData.Schedule_Time,
+  //         End_Time: this.tbAppData.End_Time,
+  //         Cust_Name: this.tbAppData.Cust_Name,
+  //         Address: this.tbAppData.Address,
+  //         vReg_No: this.tbAppData.vReg_No,
+  //         Model: this.tbAppData.Model,
+  //         Model_Year: this.tbAppData.Model_Year,
+  //         KM: this.tbAppData.KM,
+  //         Reminder1_Date: this.tbAppData.Reminder1_Date,
+  //         Reminder2_Date: this.tbAppData.Reminder2_Date,
+  //         Reminder3_Date: this.tbAppData.Reminder3_Date,
+  //         CustomerRequest: this.tbAppData.CustomerRequest,
+  //         App_TypeId: this.tbAppData.App_TypeId,
+  //         App_Serial: this.tbAppData.App_Serial,
+  //         APP_Confirm: this.tbAppData.APP_Confirm,
+  //         Appby_Secu_EMPID: this.tbAppData.Appby_Secu_EMPID,
+  //         Confirmby_Secu_EMPID: this.tbAppData.Confirmby_Secu_EMPID,
+  //         vPhone: this.tbAppData.vPhone,
+  //         email: this.tbAppData.email,
+  //         App_Entry_Date: this.tbAppData.App_Entry_Date,
+  //         Print_count: this.tbAppData.Print_count,
+  //         Level_Id: this.tbAppData.Level_Id,
+  //         Bay_Id: this.tbAppData.Bay_Id,
+  //         EMPID: this.tbAppData.EMPID,
+  //         Remarks: this.tbAppData.Remarks,
+  //         MobleNO_SMS: this.tbAppData.MobleNO_SMS,
+  //         APP_Re_Confirm: this.tbAppData.APP_Re_Confirm,
+  //         Chesis_No: this.tbAppData.Chesis_No,
+  //         UserName: this.tbAppData.UserName,
+  //         Computer_Name: this.tbAppData.Computer_Name,
+  //         Computer_UserName: this.tbAppData.Computer_UserName,
+  //         SysDate: this.tbAppData.SysDate,
+  //         create_by: this.tbAppData.create_by,
+  //         create_date: this.tbAppData.create_date,
+  //         update_by: this.tbAppData.update_by,
+  //         update_date: this.tbAppData.update_date,
+  //       });
+
+  //     } else {
+  //       this.toast.error({
+  //         detail: 'ERROR',
+  //         summary: 'Type Not Executed',
+  //         duration: 5000,
+  //       });
+  //     }
+  //   });
+  // }
 
   error() {
     this.toast.error({

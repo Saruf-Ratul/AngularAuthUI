@@ -71,6 +71,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ReConfirmApoinmentComponent } from './components/all-from/re-confirm-apoinment/re-confirm-apoinment.component';
+import { CanteenComponent } from './components/canteen/canteen.component';
+import { CanteenChartComponent } from './components/chart/canteen-chart/canteen-chart.component';
+import { CanteenAddComponent } from './components/canteen/canteen-add/canteen-add.component';
+import { CanteenViewComponent } from './components/canteen/canteen-view/canteen-view.component';
+import { CanteenReportComponent } from './components/canteen/canteen-report/canteen-report.component';
 
 
 
@@ -95,6 +101,12 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     ErrorMessageDialogComponent,
     MessageDialogComponent,
     ConfirmApoinmentComponent,
+    ReConfirmApoinmentComponent,
+    CanteenComponent,
+    CanteenChartComponent,
+    CanteenAddComponent,
+    CanteenViewComponent,
+    CanteenReportComponent,
 
   ],
   imports: [

@@ -1,0 +1,100 @@
+<div nz-row style="padding-top: 5px; background-color: rgb(207, 163, 163); text-align: center;">
+    <div nz-col nzSpan="24">
+        <h2>Canteen System Module</h2>
+    </div>
+</div>
+
+<div style="display: flexbox; padding: 10px;">
+
+    <div nz-row>
+        <div nz-col nzSpan="2">
+            <!-- back Button -->
+            <button nz-button nzType="primary" nzSize="large" (click)="back()">
+        <span nz-icon nzType="left" nzTheme="outline"></span>
+        Back
+      </button>
+        </div>
+        <div nz-col nzSpan="20">
+        </div>
+        <div nz-col nzSpan="2">
+            <!-- Home Button -->
+            <button nz-button nzType="primary" nzSize="large" (click)="home()">
+        <span nz-icon nzType="home" nzTheme="outline"></span>
+        Home
+      </button>
+        </div>
+    </div>
+
+
+    <div style="display: flexbox; background: #ECECEC; padding: 20px;">
+        <form [id]="formId" [formGroup]="form" (ngSubmit)="onSaveConfirmation()" autocomplete="off">
+            <div nz-row>
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="tbAppData">Type<span class="star">*</span></nz-form-label>
+                        <nz-select class="center" nz-input id="tbAppData" formControlName="tbAppData" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
+                            <nz-option *ngFor="let tbAT of tbAppData" [nzLabel]="tbAT.desc" [nzValue]="tbAT.code">
+                            </nz-option>
+                        </nz-select>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-control>
+                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            </div>
+
+
+            <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="12">
+                <button nz-button nzType="primary" type="submit" [disabled]="!form.valid">Save</button>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+</div>

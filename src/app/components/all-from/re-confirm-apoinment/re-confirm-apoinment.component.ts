@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
-import { ApoinmentService } from '../apoinment.service';
-import { IApiResponse } from 'src/app/shared/container/api-response.model';
-import { NgToastService } from 'ng-angular-popup';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
-import { duration } from 'moment';
+import { IApiResponse } from 'src/app/shared/container/api-response.model';
+import { ApoinmentService } from '../apoinment.service';
+import { NgToastService } from 'ng-angular-popup';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-confirm-apoinment',
-  templateUrl: './confirm-apoinment.component.html',
-  styleUrls: ['./confirm-apoinment.component.scss']
+  selector: 'app-re-confirm-apoinment',
+  templateUrl: './re-confirm-apoinment.component.html',
+  styleUrls: ['./re-confirm-apoinment.component.scss']
 })
-export class ConfirmApoinmentComponent {
+export class ReConfirmApoinmentComponent {
 
   itemId: number | any;
-  tbAppApprovedData: any = [];
-  tbAppFilterData: any = [];
+  tbReAppApprovedData: any = [];
+  tbReAppFilterData: any = [];
 
   approvedData: any = [];
   deleteData: any = [];
@@ -29,14 +28,15 @@ export class ConfirmApoinmentComponent {
   ) { }
 
   ngOnInit(): void {
-    this.GetAppApprovedData();
+    this.GetReAppApprovedData();
   }
 
-  GetAppApprovedData() {
+  GetReAppApprovedData() {
     this.apoinmentService.getAllData().subscribe((res: IApiResponse) => {
       if (res.isExecuted) {
-        this.tbAppApprovedData = res.data;
-        this.tbAppFilterData = this.tbAppApprovedData.filter((item: any) => item.apP_Confirm == null);
+        this.tbReAppApprovedData = res.data;
+        console.log(this.tbReAppApprovedData)
+        this.tbReAppFilterData = this.tbReAppApprovedData.filter((item: any) => item.apP_Re_Confirm == null);
       } else {
         this.toast.error({
           detail: 'ERROR',
@@ -115,7 +115,7 @@ export class ConfirmApoinmentComponent {
     const requestBody = {
       app_ID: itemId,
     };
-    this.apoinmentService.confirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
+    this.apoinmentService.reconfirmData(itemId, requestBody).subscribe((res: IApiResponse) => {
 
       if (res.isExecuted === true) {
         this.approvedData = res.data;
