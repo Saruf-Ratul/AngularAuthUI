@@ -8,6 +8,9 @@ import { Subscription, debounceTime } from 'rxjs';
 import { AsyncService } from 'src/app/services/async.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { CommonService } from 'src/app/services/common.service';
+import { CanteenService } from '../canteen.service';
+import { IApiResponse } from 'src/app/shared/container/api-response.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-canteen-add',
@@ -19,10 +22,15 @@ export class CanteenAddComponent {
   formId = 'apoinment-add-form';
   form: FormGroup | any;
   paramId: string | any;
-  tbAppType: any = [];
+  serviceType: any = [];
+  EmpData: any = [];
   yesNoList: any = [
     { code: 'Y', desc: 'Yes' },
     { code: 'N', desc: 'No' }
+  ];
+  MealForData: any = [
+    { code: 'O', desc: 'Owen' },
+    { code: 'G', desc: 'Guest' }
   ];
   tbAppData: any = [];
 
@@ -35,7 +43,9 @@ export class CanteenAddComponent {
   public progress: number;
   public formObserver: Subscription | any;
 
+
   constructor(
+    public canteenService: CanteenService,
     private toast: NgToastService,
     private authService: AuthService,
     private fb: FormBuilder,
@@ -51,17 +61,26 @@ export class CanteenAddComponent {
   ngOnInit(): void {
     this.paramId = this.route.snapshot.params['id'];
     this.formInfo();
-    // this.GetAlltbAppType();
+    this.GetAppType();
+    this.GetAllData();
+    this.watchEmployeeCodeChanges();
     // this.GetIdData(this.paramId);
   }
 
 
   formInfo() {
     this.form = this.fb.group({
-      id: ['0'],
-      CompanyCode: ['200'],
-      tbAppData:[]
-
+      Id: "0",
+      CompanyCode:"200",
+      ComputerName:"Code Part",
+      ComputerUserName: "Code Part",
+      UserName : "Code Part",
+      employeeCode: [],
+      employeeName: [],
+      typeId: [],
+      mealFor: [],
+      amount : [],
+      insertId: "0",
     });
 
     this.formObserver = this.form.valueChanges
@@ -69,62 +88,83 @@ export class CanteenAddComponent {
       .subscribe(() => this.onFormChanged(this.form));
   }
 
-
   get f() {
     return this.form.controls;
   }
 
-  // addData() {
-  //   this.apoinmentService.addData(this.form.value).subscribe((res: IApiResponse) => {
-  //     if (res.isExecuted === true) {
-  //       this.form.reset();
-  //       this.router.navigate(['dashboard']);
-  //       this.toast.success({
-  //         detail: 'Success',
-  //         summary: 'Data Add Success',
-  //         duration: 5000,
-  //       });
-  //     } else {
-  //       this.toast.error({
-  //         detail: 'ERROR',
-  //         summary: 'Please fill all details',
-  //         duration: 5000,
-  //       });
-  //     }
-  //   });
-  // }
+  AddData() {
+    this.canteenService.addData(this.form.value).subscribe((res: IApiResponse) => {
+      if (res.isExecuted === true) {
+        this.form.reset();
+        this.toast.success({
+          detail: 'Success',
+          summary: 'Data Add Success',
+          duration: 5000,
+        });
+      } else {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Please fill all details',
+          duration: 5000,
+        });
+      }
+    });
+  }
 
-  // GetAlltbAppType() {
-  //   this.apoinmentService.GetAlltbAppType().subscribe((res: IApiResponse) => {
-  //     if (res.isExecuted) {
-  //       this.tbAppType = res.data;
-  //     } else {
-  //       this.toast.error({
-  //         detail: 'ERROR',
-  //         summary: 'Type Not Executed',
-  //         duration: 5000,
-  //       });
-  //     }
-  //   });
-  // }
+  GetAppType() {
+    this.canteenService.getAppType().subscribe((res: IApiResponse) => {
+      if (res.isExecuted) {
+        this.serviceType = res.data;
+      } else {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Type Not Executed',
+          duration: 5000,
+        });
+      }
+    });
+  }
 
+  GetAllData() {
+    this.canteenService.getAllData().subscribe((res: IApiResponse) => {
+      if (res.isExecuted) {
+        this.EmpData = res.data;
+      } else {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'Type Not Executed',
+          duration: 5000,
+        });
+      }
+    });
+  }
 
+  watchEmployeeCodeChanges(): void {
+    this.form.get('employeeCode').valueChanges.subscribe((value:string) => {
+      const selectedEmployee = this.EmpData.find((emp: any)  => emp.employeeCode === value);
+      if (selectedEmployee) {
+        this.form.patchValue({
+          employeeName: selectedEmployee.employeeName
+        });
+      }
+    });
+  }
 
   error() {
     this.toast.error({
       detail: 'ERROR',
       summary: 'Please fill all details',
-      duration: 5000,
+      duration: 3000,
     });
   }
 
   onSaveConfirmation = (): void => {
-    // if (this.form.valid) {
-    //   this.addData();
-    // }
-    // else {
-    //   this.error();
-    // }
+    const formValue = this.form.value;
+    if (Object.values(formValue).some(value => value === null)) {
+      this.error();
+      return;
+    }
+    this.AddData();
   };
 
   onFormChanged(form: FormGroup): void {
@@ -135,22 +175,16 @@ export class CanteenAddComponent {
     const controlCount = Object.keys(form.controls).length;
     let validCount = 0;
     for (const [key, value] of Object.entries(form.controls)) {
-      if ( value.value ) {
+      if (value.value) {
         validCount++;
       }
     }
     return controlCount === 0 ? 100 : (validCount / controlCount) * 100;
   }
 
-  onBack(){
-    this.router.navigate(['dashboard']);
-  }
-
   ngOnDestroy() {
     this.formObserver.unsubscribe();
   }
-
-
 
   back() {
     window.history.back();

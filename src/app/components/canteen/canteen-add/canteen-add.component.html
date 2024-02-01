@@ -26,14 +26,22 @@
     </div>
 
 
+    <div nz-row>
+        <div nz-col nzSpan="24">
+            <div class="form-progress-bar-wrapper my-4">
+                <nz-progress [nzPercent]="progress" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }"></nz-progress>
+            </div>
+        </div>
+    </div>
+
     <div style="display: flexbox; background: #ECECEC; padding: 20px;">
         <form [id]="formId" [formGroup]="form" (ngSubmit)="onSaveConfirmation()" autocomplete="off">
             <div nz-row>
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
                     <nz-form-item>
-                        <nz-form-label for="tbAppData">Type<span class="star">*</span></nz-form-label>
-                        <nz-select class="center" nz-input id="tbAppData" formControlName="tbAppData" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
-                            <nz-option *ngFor="let tbAT of tbAppData" [nzLabel]="tbAT.desc" [nzValue]="tbAT.code">
+                        <nz-form-label for="typeId">Type<span class="star">*</span></nz-form-label>
+                        <nz-select class="center" nz-input id="typeId" formControlName="typeId" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
+                            <nz-option *ngFor="let tbAT of serviceType" [nzLabel]="tbAT.typeDetails" [nzValue]="tbAT.typeName">
                             </nz-option>
                         </nz-select>
                     </nz-form-item>
@@ -41,45 +49,38 @@
 
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
                     <nz-form-item>
-                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-label for="employeeCode">Employee Code<span class="star">*</span></nz-form-label>
+                        <nz-select class="center" nz-input id="employeeCode" formControlName="employeeCode" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
+                            <nz-option *ngFor="let empData of EmpData" [nzLabel]="empData.employeeCode" [nzValue]="empData.employeeCode">
+                            </nz-option>
+                        </nz-select>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                    <nz-form-item>
+                        <nz-form-label for="employeeName">Employee Name<span class="star">*</span></nz-form-label>
                         <nz-form-control>
-                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                            <input class="center" nz-input id="employeeName" formControlName="employeeName" readonly />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
 
                 <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
                     <nz-form-item>
-                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
-                        <nz-form-control>
-                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
-                        </nz-form-control>
+                        <nz-form-label for="mealFor">Meal For<span class="star">*</span></nz-form-label>
+                        <nz-select class="center" nz-input id="mealFor" formControlName="mealFor" nzShowSearch nzAllowClear nzPlaceHolder="Select Type">
+                            <nz-option *ngFor="let mFData of MealForData" [nzLabel]="mFData.desc" [nzValue]="mFData.code">
+                            </nz-option>
+                        </nz-select>
                     </nz-form-item>
                 </div>
 
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
+                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4" *ngIf="form.get('mealFor').value === 'G'">
                     <nz-form-item>
-                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
+                        <nz-form-label for="amount">Amount<span class="star">*</span></nz-form-label>
                         <nz-form-control>
-                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
-                        </nz-form-control>
-                    </nz-form-item>
-                </div>
-
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <nz-form-item>
-                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
-                        <nz-form-control>
-                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
-                        </nz-form-control>
-                    </nz-form-item>
-                </div>
-
-                <div nz-col nzSpan="24" nzXs="24" nzMd="8" nzLg="4">
-                    <nz-form-item>
-                        <nz-form-label for="Cust_Name">Cust Name <span class="star">*</span></nz-form-label>
-                        <nz-form-control>
-                            <input class="center" nz-input id="Cust_Name" formControlName="Cust_Name" />
+                            <input class="center" nz-input id="amount" formControlName="amount" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>

@@ -52,7 +52,6 @@ export class DashboardComponent implements OnInit {
       if (res.isExecuted === true) {
         this.userData = res.data;
         this.admin = this.userData.admin;
-        console.log(this.admin);
         this.active = this.userData.active;
       } else {
         this.userData = null;

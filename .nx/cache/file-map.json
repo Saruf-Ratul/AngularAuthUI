@@ -96,7 +96,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "10256699914034591733"
+        "hash": "9307969427519766287"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -150,7 +150,7 @@
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "8902071992701957866"
+        "hash": "17087294012609282756"
       },
       {
         "file": ".vscode/extensions.json",
@@ -297,7 +297,7 @@
       },
       {
         "file": "src/app/app-routing.module.ts",
-        "hash": "6387099855487402320",
+        "hash": "11294394246954498797",
         "deps": [
           "npm:@angular/core",
           "npm:@angular/router"
@@ -328,7 +328,7 @@
       },
       {
         "file": "src/app/app.module.ts",
-        "hash": "14879471570738349936",
+        "hash": "12424157121275906860",
         "deps": [
           "npm:@angular/core",
           "npm:@angular/platform-browser",
@@ -450,6 +450,129 @@
         ]
       },
       {
+        "file": "src/app/components/canteen/canteen-add/canteen-add.component.html",
+        "hash": "18333668495246862510"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-add/canteen-add.component.scss",
+        "hash": "14954527147164679005"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-add/canteen-add.component.spec.ts",
+        "hash": "5784377595060952391",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen-add/canteen-add.component.ts",
+        "hash": "7431334727562197084",
+        "deps": [
+          "npm:@angular/core",
+          "npm:@angular/forms",
+          "npm:@angular/router",
+          "npm:moment",
+          "npm:ng-angular-popup",
+          "npm:ng-zorro-antd",
+          "npm:rxjs"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen-report/canteen-report.component.html",
+        "hash": "14563022789941404255"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-report/canteen-report.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-report/canteen-report.component.spec.ts",
+        "hash": "14354121920265724400",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen-report/canteen-report.component.ts",
+        "hash": "12690822637468612628",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen-view/canteen-view.component.html",
+        "hash": "8037857285278096132"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-view/canteen-view.component.scss",
+        "hash": "14954527147164679005"
+      },
+      {
+        "file": "src/app/components/canteen/canteen-view/canteen-view.component.spec.ts",
+        "hash": "11913885729466999993",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen-view/canteen-view.component.ts",
+        "hash": "9300852238021684386",
+        "deps": [
+          "npm:@angular/core",
+          "npm:ng-angular-popup",
+          "npm:ng-zorro-antd",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen.component.html",
+        "hash": "13265897290753698969"
+      },
+      {
+        "file": "src/app/components/canteen/canteen.component.scss",
+        "hash": "8040392566279220000"
+      },
+      {
+        "file": "src/app/components/canteen/canteen.component.ts",
+        "hash": "945158597992570575",
+        "deps": [
+          "npm:@angular/core",
+          "npm:ng-zorro-antd",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/canteen/canteen.service.ts",
+        "hash": "15737505964697220569",
+        "deps": [
+          "npm:@angular/common",
+          "npm:@angular/core",
+          "npm:@angular/router"
+        ]
+      },
+      {
+        "file": "src/app/components/chart/canteen-chart/canteen-chart.component.html",
+        "hash": "7024457530568100895"
+      },
+      {
+        "file": "src/app/components/chart/canteen-chart/canteen-chart.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/components/chart/canteen-chart/canteen-chart.component.spec.ts",
+        "hash": "4109127273147614074",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
+        "file": "src/app/components/chart/canteen-chart/canteen-chart.component.ts",
+        "hash": "6734810428434844926",
+        "deps": [
+          "npm:@angular/core"
+        ]
+      },
+      {
         "file": "src/app/components/chart/chartbord/chartbord.component.html",
         "hash": "9005211838877799428"
       },
@@ -482,7 +605,7 @@
       },
       {
         "file": "src/app/components/dashboard/dashboard.component.html",
-        "hash": "9822185159985208623"
+        "hash": "7452991937807337783"
       },
       {
         "file": "src/app/components/dashboard/dashboard.component.spec.ts",
@@ -494,7 +617,7 @@
       },
       {
         "file": "src/app/components/dashboard/dashboard.component.ts",
-        "hash": "14234158012188813551",
+        "hash": "6952648652973910979",
         "deps": [
           "npm:@angular/core",
           "npm:rxjs",

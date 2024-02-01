@@ -46,32 +46,34 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Model</th>
-                            <th scope="col">Model Year</th>
-                            <th scope="col">Kilometer</th>
-                            <th scope="col">Remarks</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Employee Code</th>
+                            <th scope="col">Employee Name</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Type Id</th>
+                            <th scope="col">Type Name</th>
+                            <th scope="col">Meal Date</th>
+                            <th scope="col">Token No</th>
                             <th scope="col" style="text-align: center;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let appointment of tbAppFilterData; let i= index">
+                        <tr *ngFor="let cData of canteenFullData; let i= index">
                             <td>{{i+1}}</td>
-                            <td>{{appointment.model}}</td>
-                            <td>{{appointment.model_Year}}</td>
-                            <td>{{appointment.km}}</td>
-                            <td>{{appointment.remarks}}</td>
-                            <td>{{appointment.address}}</td>
-                            <td>{{appointment.vPhone}}</td>
-                            <td>{{appointment.email}}</td>
+                            <td>{{cData.employeeCode}}</td>
+                            <td>{{cData.employeeName}}</td>
+                            <td>{{cData.designation}}</td>
+                            <td>{{cData.department}}</td>
+                            <td>{{cData.typeId}}</td>
+                            <td>{{cData.typeName}}</td>
+                            <td>{{cData.typeName}}</td>
+                            <td>{{cData.typeName}}</td>
                             <td style="text-align: right;">
-                                <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'A')">Approved</button>
+                                <button nz-button nzType="primary" (click)="buttonAction(cData.app_ID,'A')">Approved</button>
                                 <nz-divider nzType="vertical"></nz-divider>
-                                <button nz-button nzType="primary" (click)="buttonAction(appointment.app_ID,'E')">Edit</button>
+                                <button nz-button nzType="primary" (click)="buttonAction(cData.app_ID,'E')">Edit</button>
                                 <nz-divider nzType="vertical"></nz-divider>
-                                <button nz-button nzDanger nzType="primary" (click)="buttonAction(appointment.app_ID,'D')">Delete</button>
+                                <button nz-button nzDanger nzType="primary" (click)="buttonAction(cData.app_ID,'D')">Delete</button>
                             </td>
                         </tr>
                     </tbody>
